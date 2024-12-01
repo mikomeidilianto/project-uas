@@ -13,7 +13,7 @@
                 session();
                 $validation = \Config\Services::validation();
                 ?>
-                <?php echo form_open('Kategori/InsertData') ?>
+                <?php echo form_open('admin/Kategori/InsertData') ?>
                 <div class="form-group">
                     <label>Nama Kategori</label>
                     <input name="name" value="<?= old('name') ?>" class="form-control">

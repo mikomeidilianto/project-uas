@@ -49,21 +49,22 @@ class Kategori extends BaseController
                 ],
             'description' => [
                 'label' => 'Deskripsi Kategori',
-                'rules' => 'required|is_unique[categories.description]',
+                'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !!!',
-                    'is_unique' => '{field} sudah ada !!!',
                 ]
-            ]
+                ],
         ])) {
-
+            // Jika valid
             $data = [
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
             ];
             $this->ModelKategori->InsertData($data);
-            session()->setFlashData('insert');
+            session()->setFlashdata('insert','Data berhasil ditambahkan !!');
+            return redirect()->to(base_url('admin/Kategori'));
         } else {
+            // Jika tidak valid
             session()->setFlashdata('errors',\Config\Services::validation()->getErrors());
             return redirect()->to(base_url('admin/Kategori/Tambah'))->withInput('validation', \config\Services::validation());
         }

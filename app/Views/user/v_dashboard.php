@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-
-<body>
     <nav class="navbar navbar-expand-lg" style="background-color: #214836;">
         <div class="container-fluid">
             <a href="#" class="navbar-brand m-0">
@@ -20,7 +10,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link active text-white" href="#" style="font-size: 15px; ">Home</a>
-                    </li>
+                    </li>   
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#" style="font-size: 15px; margin-left: 50px;">Menu</a>
                     </li>
@@ -31,6 +21,7 @@
                         <a class="nav-link text-white" href="#" style="font-size: 15px; margin-left: 50px;">Login</a>
                     </li>
                 </ul>
+                <!-- Search bar -->
                 <form class="d-flex">
                     <button class="btn-icon" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -47,7 +38,4 @@
         </div>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    

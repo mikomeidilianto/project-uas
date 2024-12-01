@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ModelKategori extends Model
 {   
     //Tampil data
-    public function Alldata()
+    public function AllData()
     {
         return $this->db->table('categories')
                 ->Get()-> GetResultArray();

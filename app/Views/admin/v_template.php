@@ -54,6 +54,8 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url ('Admin') ?>/assets/css/soft-ui-dashboard.min.css?v=1.1.0" rel="stylesheet" />
+  <link id="pagestyle2" href="<?= base_url ('Admin') ?>\assets\css\style-global.css" rel="stylesheet" />
+ 
   <!-- Anti-flicker snippet (recommended)  -->
   </head>
   
@@ -226,8 +228,21 @@
       </div>
     </div>
     <!-- End Konten -->
-  </main>
-  
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              © <script>
+                document.write(new Date().getFullYear())
+                </script>,
+                Dibuat oleh Kelompok 3
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
   <!--   Core JS Files   -->
   <script src="<?= base_url ('Admin') ?>/assets/js/core/popper.min.js"></script>
   <script src="<?= base_url ('Admin') ?>/assets/js/core/bootstrap.min.js"></script>

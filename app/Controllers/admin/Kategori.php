@@ -69,4 +69,59 @@ class Kategori extends BaseController
             return redirect()->to(base_url('admin/Kategori/Tambah'))->withInput('validation', \config\Services::validation());
         }
     }
+
+    public function Edit($id)
+    {
+        $data = [
+            'judul' => 'Edit Kategori',
+            'page' => 'admin/v_editkategori',
+            'menu' => 'kategori',
+            'kategori' => $this->ModelKategori->DetailData($id),
+        ];
+         return view('admin/v_template', $data);
+    }
+
+    public function UpdateData($id)
+    {
+        if ($this->validate([
+            'name' => [
+                'label' => 'Nama Kategori',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib Diisi !!!',
+                ]
+                ],
+            'description' => [
+                'label' => 'Deskripsi Kategori',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib Diisi !!!',
+                ]
+                ],
+        ])) {
+            // Jika valid
+            $data = [
+                'id' => $id,
+                'name' => $this->request->getPost('name'),
+                'description' => $this->request->getPost('description'),
+            ];
+            $this->ModelKategori->UpdateData($data);
+            session()->setFlashdata('update','Data Berhasil Diupdate !!');
+            return redirect()->to(base_url('admin/Kategori'));
+        } else {
+            // Jika tidak valid
+            session()->setFlashdata('errors',\Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('admin/Kategori/Edit/' . $id))->withInput('validation', \config\Services::validation());
+        }
+    }
+
+    public function Delete($id)
+    {
+        $data = [
+            'id' => $id,
+        ];
+        $this->ModelKategori->DeleteData($data);
+        session()->setFlashdata('delete','Data Berhasil Dihapus !!');
+        return redirect()->to(base_url('admin/Kategori'));
+    }
 }

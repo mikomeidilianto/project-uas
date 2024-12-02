@@ -18,4 +18,27 @@ class ModelKategori extends Model
     {
         $this->db->table('categories')->insert($data);
     }
+
+    public function DetailData($id)
+    {
+        return $this->db->table('categories')
+                ->where('id', $id)
+                ->Get()->GetRowArray();
+    }
+
+    //Edit data
+    public function UpdateData($data)
+    {
+        $this->db->table('categories')
+        ->where('id', $data['id'])
+        ->update($data);
+    }
+
+    //Delete data
+    public function DeleteData($data)
+    {
+        $this->db->table('categories')
+        ->where('id', $data['id'])
+        ->delete($data);
+    }
 }

@@ -227,7 +227,9 @@
       ?>  
       </div>
     </div>
+    </main>
     <!-- End Konten -->
+
     <footer class="footer">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">
@@ -242,7 +244,17 @@
           </div>
         </div>
       </footer>
-    </main>
+      <!-- <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 Company, Inc</span>
+    </div>
+  </footer>
+</div> -->
+   
   <!--   Core JS Files   -->
   <script src="<?= base_url ('Admin') ?>/assets/js/core/popper.min.js"></script>
   <script src="<?= base_url ('Admin') ?>/assets/js/core/bootstrap.min.js"></script>

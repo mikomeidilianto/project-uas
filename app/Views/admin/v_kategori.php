@@ -16,9 +16,21 @@
                 echo session()->getFlashdata('insert');
                 echo '</div>';
               }
+
+              if (session()->getFlashdata('update')){
+                echo '<div class="alert alert-light">';
+                echo session()->getFlashdata('update');
+                echo '</div>';
+              }
+              
+              if (session()->getFlashdata('delete')){
+                echo '<div class="alert alert-danger">';
+                echo session()->getFlashdata('delete');
+                echo '</div>';
+              }
               ?>
               <div class="table-responsive p-0">
-                  <table class="table align-items-center justify-content-center mb-0">
+                  <table class="table align-items-center justify-content-center mb-0 px-2">
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>
@@ -39,6 +51,10 @@
                       </td>
                       <td>
                         <span class="text-xs font-weight-bold"><?= $value['description'] ?></span>
+                      </td>
+                      <td>
+                        <a href="<?= base_url('admin/Kategori/Edit/' . $value['id']) ?>" class="btn btn-warning">Edit</a>
+                        <a href="<?= base_url('admin/Kategori/Delete/' . $value['id']) ?>" onclick="return confirm('Yakin Hapus Data?')" class="btn btn-danger">Delete</a>
                       </td>
                     </tr>
                     <?php } ?>

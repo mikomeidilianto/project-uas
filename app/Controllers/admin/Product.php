@@ -16,19 +16,22 @@ class Product extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Product',
+            'judul' => 'Produk',
             'page' => 'admin/v_product',
             'menu' => 'product',
             'produk' => $this->ModelProduk->AllData(),
         ];
          return view('admin/v_template', $data);
     }
+
+
     public function Tambah()
     {
         $data = [
-            'judul' => 'Tambah Kategori',
-            'page' => 'admin/v_tambahkategori',
-            'menu' => 'kategori',
+            'judul' => 'Tambah Produk',
+            'page' => 'admin/v_tambahproduct',
+            'menu' => 'product',
+            'kategori' => $this->ModelProduk->AllKategori(),
         ];
          return view('admin/v_template', $data);
     }
@@ -72,19 +75,38 @@ class Product extends BaseController
                     'required' => '{field} Wajib Diisi !!!',
                 ]
                 ],
+            'image_path' => [
+                'label' => 'Foto',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib Diisi !!!',
+                ]
+                ],
+            'status' => [
+                'label' => 'Status',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib Diisi !!!',
+                ]
+                ],
         ])) {
             // Jika valid
             $data = [
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
+                'price' => $this->request->getPost('price'),
+                'stock' => $this->request->getPost('stock'),
+                'name' => $this->request->getPost('category_id'),
+                'image_path' => $this->request->getPost('image_path'),
+                'status' => $this->request->getPost('status'),
             ];
             $this->ModelKategori->InsertData($data);
             session()->setFlashdata('insert','Data berhasil ditambahkan !!');
-            return redirect()->to(base_url('admin/Kategori'));
+            return redirect()->to(base_url('admin/Product'));
         } else {
             // Jika tidak valid
             session()->setFlashdata('errors',\Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('admin/Kategori/Tambah'))->withInput('validation', \config\Services::validation());
+            return redirect()->to(base_url('admin/Product/Tambah'))->withInput('validation', \config\Services::validation());
         }
     }
 }

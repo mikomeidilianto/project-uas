@@ -15,4 +15,17 @@ class ModelProduk extends Model
             ->get()
             ->getResultArray();
     }
+    public function InsertData($data)
+    {
+        $this->db->table('products')->insert($data);
+    }
+
+    //nama kategori
+    public function AllKategori()
+    {
+        // Melakukan join antara tabel 'products' dan 'categories' berdasarkan category_id
+        return $this->db->table('categories')
+            ->get()->getResultArray();
+    }
 }
+

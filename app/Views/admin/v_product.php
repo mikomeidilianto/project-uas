@@ -5,9 +5,17 @@
               <h6>Produk</h6>
             </div>
             <div class="col-11 text-end">
-                                  <a href="<?= base_url('Kategori/Tambah') ?>" class="btn btn-primary btn-xm text-end mt-n5 me-n6">Tambah</a>
+                                  <a href="<?= base_url('admin/Product/Tambah') ?>" class="btn btn-primary btn-xm text-end mt-n5 me-n6">Tambah</a>
                                </div>
             <div class="card-body px-4 pt-0 pb-2">
+            <?php
+              // notif pesan berhasil ditambahkan
+              if (session()->getFlashdata('insert')){
+                echo '<div class="alert alert-success">';
+                echo session()->getFlashdata('insert');
+                echo '</div>';
+              }
+              ?>
               <div class="table-responsive p-0">
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
@@ -25,7 +33,9 @@
                   </thead>
                   <tbody>
                     <?php $no = 1; 
-                    foreach ($produk as $key => $value) { ?>
+                    foreach ($produk as $key => $value) { 
+                    $price = number_format($value['price'], 2, ',', '.');
+                    ?>
                     <tr>
                       <td>
                         <span class="text-xs font-weight-bold text-center"><?= $no++ ?></span>
@@ -37,7 +47,7 @@
                         <span class="text-xs font-weight-bold"><?= $value['description'] ?></span>
                       </td>
                       <td>
-                        <span class="text-xs font-weight-bold">Rp<?= $value['price'] ?></span>
+                        <span class="text-xs font-weight-bold">Rp<?= $price ?></span>
                       </td>
                       <td>
                         <span class="text-xs font-weight-bold"><?= $value['stock'] ?></span>

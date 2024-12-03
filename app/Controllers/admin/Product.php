@@ -5,6 +5,7 @@ namespace App\Controllers\admin;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\ModelProduk;
+use App\Models\ModelKategori;
 
 class Product extends BaseController
 {
@@ -118,7 +119,8 @@ class Product extends BaseController
             'judul' => 'Edit Kategori',
             'page' => 'admin/v_editproduk',
             'menu' => 'product',
-            'kategori' => $this->ModelKategori->DetailData($id),
+            'detailproduk' => $this->ModelProduk->DetailData($id),
+            'kategori' => $this->ModelProduk->AllKategori(),
         ];
          return view('admin/v_template', $data);
     }
@@ -194,7 +196,17 @@ class Product extends BaseController
         } else {
             // Jika tidak valid
             session()->setFlashdata('errors',\Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('admin/Product/Tambah'))->withInput('validation', \config\Services::validation());
+            return redirect()->to(base_url('admin/Product/Edit/' . $id))->withInput('validation', \config\Services::validation());
         }
+    }
+
+    public function Delete($id)
+    {
+        $data = [
+            'id' => $id,
+        ];
+        $this->ModelProduk->DeleteData($data);
+        session()->setFlashdata('delete','Data Berhasil Dihapus !!');
+        return redirect()->to(base_url('admin/Product'));
     }
 }

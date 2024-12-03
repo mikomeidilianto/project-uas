@@ -13,15 +13,15 @@
                 session();
                 $validation = \Config\Services::validation();
                 ?>
-                <?php echo form_open('admin/Kategori/UpdateData/' . $kategori['id']) ?>
+                <?php echo form_open('admin/Kategori/UpdateData/' . $detailkategori['id']) ?>
                 <div class="form-group">
                     <label>Nama Kategori</label>
-                    <input name="name" value="<?= $kategori['name'] ?>" class="form-control">
+                    <input name="name" value="<?= $detailkategori['name'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['name']) == isset($errors['name']) ? validation_show_error('name') : '' ?></p>
                 </div>
                 <div class="form-group">
                     <label>Deskripsi Kategori</label>
-                    <input name="description" value="<?= $kategori['description'] ?>" class="form-control">
+                    <input name="description" value="<?= $detailkategori['description'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['description']) == isset($errors['description']) ? validation_show_error('description') : '' ?></p>
                 </div>
                 

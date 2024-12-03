@@ -76,7 +76,7 @@ class Kategori extends BaseController
             'judul' => 'Edit Kategori',
             'page' => 'admin/v_editkategori',
             'menu' => 'kategori',
-            'kategori' => $this->ModelKategori->DetailData($id),
+            'detailkategori' => $this->ModelKategori->DetailData($id),
         ];
          return view('admin/v_template', $data);
     }

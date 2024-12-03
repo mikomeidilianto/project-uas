@@ -13,33 +13,33 @@
                 session();
                 $validation = \Config\Services::validation();
                 ?>
-                <?php echo form_open('admin/Product/UpdateData/' . $produk['id']) ?>
+                <?php echo form_open('admin/Product/UpdateData/' . $detailproduk['id']) ?>
                 <div class="row">
                 <div class="col-sm-6">
                 <div class="form-group">
                     <label>Nama Produk</label>
-                    <input name="name" value="<?= old('name') ?>" class="form-control">
+                    <input name="name" value="<?= $detailproduk['name'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['name']) == isset($errors['name']) ? validation_show_error('name') : '' ?></p>
                 </div>
                 </div>
                 <div class="col-sm-6">
                 <div class="form-group">
                     <label>Deskripsi Produk</label>
-                    <input name="description" value="<?= old('description') ?>" class="form-control">
+                    <input name="description" value="<?= $detailproduk['description'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['description']) == isset($errors['description']) ? validation_show_error('description') : '' ?></p>
                 </div>
                 </div>
                 <div class="col-sm-6">
                 <div class="form-group">
                     <label>Harga</label>
-                    <input name="price" value="<?= old('price') ?>" class="form-control">
+                    <input name="price" value="<?= $detailproduk['price'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['price']) == isset($errors['price']) ? validation_show_error('price') : '' ?></p>
                 </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                     <label>Stok</label>
-                    <input name="stock" value="<?= old('stock') ?>" class="form-control">
+                    <input name="stock" value="<?= $detailproduk['stock'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['stock']) == isset($errors['stock']) ? validation_show_error('stock') : '' ?></p>
                 </div>
                 </div>
@@ -50,24 +50,28 @@
                 <div class="form-group">
                     <label>Kategori</label>
                     <select name="category_id" class="form-control">
-                    <option value="">--Pilih Kategori--</option>
-                    <?php foreach ($kategori as $key => $value) { ?>
-                        <option value="<?= $value['id'] ?>"> <?= $value['name'] ?> </option>
+                        <option value="">--Pilih Kategori--</option>
+                        <?php foreach ($kategori as $key => $value) { ?>
+                            <option 
+                            value="<?= $value['id'] ?>" 
+                            <?= ($detailproduk['category_id'] == $value['id']) ? 'selected' : '' ?>>
+                            <?= $value['name'] ?> 
+                            </option>
                         <?php } ?>
-                        </select>
+                    </select>
                     <p class="text-danger"><?= isset($errors['category_id']) == isset($errors['category_id']) ? validation_show_error('category_id') : '' ?></p>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input name="image_path" value="<?= old('image_path') ?>" class="form-control">
+                    <input name="image_path" value="<?= $detailproduk['image_path'] ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['image_path']) == isset($errors['image_path']) ? validation_show_error('image_path') : '' ?></p>
                 </div>
                 <div class="form-group">
                 <label>Status</label>
                 <select name="status" class="form-control">
                     <option value="">--Pilih Status--</option>
-                    <option value="active" <?= old('status') == 'active' ? 'selected' : '' ?>>Aktif</option>
-                    <option value="inactive" <?= old('status') == 'inactive' ? 'selected' : '' ?>>Kosong</option>
+                    <option value="active" <?= ($detailproduk['status'] == 'active') ? 'selected' : '' ?>>Aktif</option>
+                    <option value="inactive" <?= ($detailproduk['status'] == 'inactive') ? 'selected' : '' ?>>Kosong</option>
                 </select>
                 <p class="text-danger"><?= isset($errors['status']) == isset($errors['status']) ? validation_show_error('status') : '' ?></p>
             </div>

@@ -51,5 +51,7 @@ class ModelProduk extends Model
         return $this->db->table('categories')
             ->get()->getResultArray();
     }
+
+    
 }
 

@@ -11,5 +11,7 @@ class Dashboard extends BaseController
             'page' => 'user/v_dashboard',
         ];
         return view('user/v_template', $data);
+
+        
     }
 }

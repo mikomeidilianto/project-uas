@@ -22,6 +22,7 @@
                     <p class="text-danger"><?= isset($errors['name']) == isset($errors['name']) ? validation_show_error('name') : '' ?></p>
                 </div>
                 </div>
+
                 <div class="col-sm-6">
                 <div class="form-group">
                     <label>Deskripsi Produk</label>
@@ -29,6 +30,7 @@
                     <p class="text-danger"><?= isset($errors['description']) == isset($errors['description']) ? validation_show_error('description') : '' ?></p>
                 </div>
                 </div>
+
                 <div class="col-sm-6">
                 <div class="form-group">
                     <label>Harga</label>
@@ -36,6 +38,7 @@
                     <p class="text-danger"><?= isset($errors['price']) == isset($errors['price']) ? validation_show_error('price') : '' ?></p>
                 </div>
                 </div>
+
                 <div class="col-sm-6">
                     <div class="form-group">
                     <label>Stok</label>
@@ -43,34 +46,50 @@
                     <p class="text-danger"><?= isset($errors['stock']) == isset($errors['stock']) ? validation_show_error('stock') : '' ?></p>
                 </div>
                 </div>
+
                 <div class="col-sm-6">
-                </div>
-                </div>
-                
                 <div class="form-group">
                     <label>Kategori</label>
                     <select name="category_id" class="form-control">
-                    <option value="">--Pilih Kategori--</option>
+                    <option value=""selected disabled>--Pilih Kategori--</option>
                     <?php foreach ($kategori as $key => $value) { ?>
                         <option value="<?= $value['id'] ?>"> <?= $value['name'] ?> </option>
                         <?php } ?>
                         </select>
                     <p class="text-danger"><?= isset($errors['category_id']) == isset($errors['category_id']) ? validation_show_error('category_id') : '' ?></p>
                 </div>
+                </div>
+
+                <div class="col-sm-6">
+                <div class="form-group">
+                <label>Status</label>
+                <select name="status" class="form-control">
+                    <option value=""selected disabled>--Pilih Status--</option>
+                    <option value="active" <?= old('status') == 'active' ? 'selected' : '' ?>>Aktif</option>
+                    <option value="inactive" <?= old('status') == 'inactive' ? 'selected' : '' ?>>Kosong</option>
+                </select>
+                <p class="text-danger"><?= isset($errors['status']) == isset($errors['status']) ? validation_show_error('status') : '' ?></p>
+                </div>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Foto</label>
+                    <input type="file" class="form-control" name="foto" >
+                    <p class="text-danger"><?= isset($errors['image_path']) == isset($errors['image_path']) ? validation_show_error('image_path') : '' ?></p>
+                </div>
+                </div>
+                <div class="col-sm-6">
                 <div class="form-group">
                     <label>Foto</label>
                     <input name="image_path" value="<?= old('image_path') ?>" class="form-control">
                     <p class="text-danger"><?= isset($errors['image_path']) == isset($errors['image_path']) ? validation_show_error('image_path') : '' ?></p>
                 </div>
-                <div class="form-group">
-                <label>Status</label>
-                <select name="status" class="form-control">
-                    <option value="">--Pilih Status--</option>
-                    <option value="active" <?= old('status') == 'active' ? 'selected' : '' ?>>Aktif</option>
-                    <option value="inactive" <?= old('status') == 'inactive' ? 'selected' : '' ?>>Kosong</option>
-                </select>
-                <p class="text-danger"><?= isset($errors['status']) == isset($errors['status']) ? validation_show_error('status') : '' ?></p>
+                </div>
             </div>
+                
 
                 
                 <button type="submit" class="btn btn-primary">Simpan</button>

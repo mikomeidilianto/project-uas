@@ -68,7 +68,7 @@
                         <span class="text-xs font-weight-bold"><?= $value['category_name'] ?></span>
                       </td>
                       <td>
-                        <span class="text-xs font-weight-bold"><?= $value['image_path'] ?></span>
+                        <span class="text-xs font-weight-bold"><?= $value['foto'] ?></span>
                       </td>
                       <td>
                         <span class="text-xs font-weight-bold"><?= ($value['status'] == 'active') ? 'Aktif' : 'Kosong'; ?></span>

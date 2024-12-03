@@ -15,12 +15,36 @@ class ModelProduk extends Model
             ->get()
             ->getResultArray();
     }
+
+     //Tambah data
     public function InsertData($data)
     {
         $this->db->table('products')->insert($data);
     }
 
-    //nama kategori
+    public function DetailData($id)
+    {
+        return $this->db->table('products')
+                ->where('id', $id)
+                ->Get()->GetRowArray();
+    }
+
+     //Edit data
+     public function UpdateData($data)
+     {
+         $this->db->table('products')
+         ->where('id', $data['id'])
+         ->update($data);
+     }
+ 
+     //Delete data
+     public function DeleteData($data)
+     {
+         $this->db->table('products')
+         ->where('id', $data['id'])
+         ->delete($data);
+     }
+ 
     public function AllKategori()
     {
         // Melakukan join antara tabel 'products' dan 'categories' berdasarkan category_id

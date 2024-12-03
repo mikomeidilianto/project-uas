@@ -41,4 +41,12 @@ class ModelKategori extends Model
         ->where('id', $data['id'])
         ->delete($data);
     }
+
+    //nama kategori
+    // public function AllKategori()
+    // {
+    //     // Melakukan join antara tabel 'products' dan 'categories' berdasarkan category_id
+    //     return $this->db->table('categories')
+    //         ->get()->getResultArray();
+    // }
 }

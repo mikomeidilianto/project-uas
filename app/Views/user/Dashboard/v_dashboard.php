@@ -1,4 +1,4 @@
-    <section class="py-2 container-fluid" style="background-color: #214836; height: 80vh;">
+    <section class="py-2 container-fluid ps-xl-5" style="background-color: #214836; height: 80vh;">
         <div class="row py-lg-5">
             <!-- Konten Teks -->
             <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-center text-white" style="padding-left: 50px;">
@@ -13,22 +13,44 @@
             </div>
         </div>
     </section>
-    <section class="py-2 container-fluid" style="background-color: white; height: 80vh;">
-        <div class="row py-lg-5">
-            <!-- Konten Teks -->
-            <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-center text-black" style="padding-left: 50px;">
-                <h1 style="font-size: 60px;">Green Cloud Kitchen</h1>
-                <p style="font-size: 25px;">Pesan Makan Tanpa Antri!</p>
-                <button class="btn btn-outline-light btn-lg" style="background-color: #b08e63; border: none; width:190px">Coba Sekarang</button>
-            </div>
+    
 
-            <!-- Gambar -->
-            <div class="col-lg-6 col-md-6 d-flex justify-content-end align-items-center">
-                <img src="<?= base_url('Admin') ?>/assets/img/Foto-makanan.png" class="img-fluid" style="max-width: 450px; margin-right: -12px;">
-            </div>
-        </div>
+    <section class="py-2 container-fluid" style="background-color: white; height: 80vh;">
+    <div class="container my-5">
+    <h2 class="text-center mb-4">Our Tenants</h2>
+    <div class="marquee">
+      <div class="marquee-content d-flex justify-content-around align-items-center">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Kopi Beska" class="img-fluid" style="max-height: 80px;">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Diwet" class="img-fluid" style="max-height: 80px;">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Uramen" class="img-fluid" style="max-height: 80px;">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Churih" class="img-fluid" style="max-height: 80px;">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Munchies" class="img-fluid" style="max-height: 80px;">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Hap-Hap" class="img-fluid" style="max-height: 80px;">
+        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Mytie" class="img-fluid" style="max-height: 80px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Menu</h2>
+    <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <!-- Es Kopi Susu Beska -->
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <!-- Ramen Tantan -->
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <!-- OriWet -->
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <!-- Tahu Bakso (isi 3) -->
+      </div>
+    </div>
+  </div>
     </section>
-    <section class="py-5 container-fluid" style="background-color: #214836;">
+    
+    <section class="py-5 container-fluid px-xl-5" style="background-color: #214836;">
         <!-- Judul -->
         <div class="row py-3">
             <div class="col-12 text-center text-white">

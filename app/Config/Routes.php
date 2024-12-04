@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'user\Dashboard::index');
-
+$routes->get('menu', 'user\Menu::index');
 // $routes->get('/Home', 'Home::index');
 // $routes->get('Home/Artikel', 'Home::Artikel');
 // $routes->get('/Artikel', 'Home::Artikel');

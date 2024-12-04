@@ -12,7 +12,7 @@
                     <a class="nav-link active text-white" href="#" style="font-size: 15px; ">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#" style="font-size: 15px; margin-left: 50px;">Menu</a>
+                    <a class="nav-link text-white" href="/menu" style="font-size: 15px; margin-left: 50px;">Menu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#" style="font-size: 15px; margin-left: 50px;">About Us</a>

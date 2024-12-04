@@ -42,6 +42,8 @@
     <main>
         <?php echo view($page); ?> <!-- Memanggil view yang di controller -->
     </main>
+    <?php echo view('user/Dashboard/v_footer'); ?>
+
 </body>
 
 </html>

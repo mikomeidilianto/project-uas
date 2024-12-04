@@ -33,7 +33,7 @@
 
 <body>
     <!-- Navbar -->
-    <?php echo view('user/Dashboard/v_navbar'); ?> 
+    <?php echo view('user/Dashboard/v_navbar_dashboard'); ?> 
 
     <main>
         

@@ -53,7 +53,7 @@
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- CSS Files -->
-  <link id="pagestyle" href="<?= base_url ('Admin') ?>/assets/css/soft-ui-dashboard.min.css?v=1.1.0" rel="stylesheet" />
+  <link id="pagestyle" href="<?= base_url ('Admin') ?>\assets\css\soft-ui-dashboard.min.css?v=1.1.0" rel="stylesheet" />
   <link id="pagestyle2" href="<?= base_url ('Admin') ?>\assets\css\style-global.css" rel="stylesheet" />
 
   <!-- jquery -->
@@ -67,13 +67,13 @@
   <!-- Anti-flicker snippet (recommended)  -->
   </head>
   
-  <body class="g-sidenav-show  bg-gray-100">
+  <body class="g-sidenav-show bg-gray-100">
   <!-- Sidenav -->
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a href="<?= base_url('admin/Home') ?>" class="navbar-brand m-0">
-        <img src="<?= base_url ('Admin') ?>/assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="<?= base_url ('Admin') ?>/assets/img/Logo-bg-trasparan.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">Admin</span>
       </a>
     </div>

@@ -13,7 +13,7 @@
                 session();
                 $validation = \Config\Services::validation();
                 ?>
-                <?php echo form_open('admin/Kategori/InsertData') ?>
+                <?php echo form_open_multipart('admin/Kategori/InsertData') ?>
                 <div class="form-group">
                     <label>Nama Kategori</label>
                     <input name="name" value="<?= old('name') ?>" class="form-control">
@@ -25,6 +25,23 @@
                     <p class="text-danger"><?= isset($errors['description']) == isset($errors['description']) ? validation_show_error('description') : '' ?></p>
                 </div>
                 
+                <div class="row">
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Foto</label>
+                    <input type="file" id="preview_gambar" class="form-control" name="foto"accept="image/*">
+                    <p class="text-danger"><?= isset($errors['foto']) == isset($errors['foto']) ? validation_show_error('foto') : '' ?></p>
+                </div>
+                </div>
+                
+                <div class="col-sm-6">
+                <label>Preview Foto</label>
+                <div class="form-group">
+                    <img src="<?= base_url('Admin') ?>/assets/img/" id="gambar_load" width="180px" height="200px"> 
+                </div>
+                </div>
+            </div>
+
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 
                 <?php echo form_close() ?>
@@ -33,5 +50,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    function bacaGambar(input)
+    {
+        if (input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#gambar_load').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $('#preview_gambar').change(function(){
+        bacaGambar(this);
+    });
+</script>
 
 

@@ -54,14 +54,30 @@ class Kategori extends BaseController
                     'required' => '{field} Wajib Diisi !!!',
                 ]
                 ],
+
+                'foto' => [
+                'label' => 'Foto',
+                 'rules' => 'uploaded[foto]|max_size[foto,10024]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                 'errors' => [
+                     'uploaded' => '{field} Wajib Diupload !!!',
+                     'max_size' => 'Ukuran {field} Max 10MB',
+                     'mime_in' => 'Format {field} Harus JPG/PNG/JPEG/GIF/WEBP',
+                 ]
+                ],
         ])) {
+            $foto = $this->request->getFile('foto');
+            $nama_file = $foto->getRandomName();
+
             // Jika valid
             $data = [
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
+                'foto' => $nama_file,
             ];
+
+            $foto->move("Admin/assets/img",$nama_file);
             $this->ModelKategori->InsertData($data);
-            session()->setFlashdata('insert','Data berhasil ditambahkan !!');
+            session()->setFlashdata('insert','Kategori berhasil ditambahkan !!');
             return redirect()->to(base_url('admin/Kategori'));
         } else {
             // Jika tidak valid
@@ -98,13 +114,33 @@ class Kategori extends BaseController
                     'required' => '{field} Wajib Diisi !!!',
                 ]
                 ],
+            'foto' => [
+                'label' => 'Foto',
+                 'rules' => 'max_size[foto,10024]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                 'errors' => [
+                     'uploaded' => '{field} Wajib Diupload !!!',
+                     'max_size' => 'Ukuran {field} Max 10MB',
+                     'mime_in' => 'Format {field} Harus JPG/PNG/JPEG/GIF/WEBP',
+                 ]
+                ],
         ])) {
+            $detailkategori = $this->ModelKategori->DetailData($id);
+            $foto = $this->request->getFile('foto');
+            if ($foto->getError() == 4){
+                $nama_file = $detailproduk['foto'];
+            } else {
+                $nama_file = $foto->getRandomName();
+                $foto->move("Admin/assets/img/",$nama_file);
+            }
+
             // Jika valid
             $data = [
                 'id' => $id,
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
+                'foto' => $nama_file,
             ];
+
             $this->ModelKategori->UpdateData($data);
             session()->setFlashdata('update','Data Berhasil Diupdate !!');
             return redirect()->to(base_url('admin/Kategori'));
@@ -117,6 +153,10 @@ class Kategori extends BaseController
 
     public function Delete($id)
     {
+        $detailproduk = $this->ModelProduk->DetailData($id);
+        if ($detailproduk['foto'] <> ''){
+            unlink('Admin/assets/img/' . $detailproduk['foto']);
+        }
         $data = [
             'id' => $id,
         ];

@@ -13,7 +13,7 @@
                 session();
                 $validation = \Config\Services::validation();
                 ?>
-                <?php echo form_open('admin/Product/InsertData') ?>
+                <?php echo form_open_multipart('admin/Product/InsertData') ?>
                 <div class="row">
                 <div class="col-sm-6">
                 <div class="form-group">
@@ -77,20 +77,17 @@
                 <div class="col-sm-6">
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" class="form-control" name="foto" >
-                    <p class="text-danger"><?= isset($errors['image_path']) == isset($errors['image_path']) ? validation_show_error('image_path') : '' ?></p>
+                    <input type="file" id="preview_gambar" class="form-control" name="foto"accept="image/*">
+                    <p class="text-danger"><?= isset($errors['foto']) == isset($errors['foto']) ? validation_show_error('foto') : '' ?></p>
                 </div>
                 </div>
                 <div class="col-sm-6">
+                <label>Preview Foto</label>
                 <div class="form-group">
-                    <label>Foto</label>
-                    <input name="image_path" value="<?= old('image_path') ?>" class="form-control">
-                    <p class="text-danger"><?= isset($errors['image_path']) == isset($errors['image_path']) ? validation_show_error('image_path') : '' ?></p>
+                    <img src="<?= base_url('Admin') ?>/assets/img/" id="gambar_load" width="180px" height="200px"> 
                 </div>
                 </div>
             </div>
-                
-
                 
                 <button type="submit" class="btn btn-primary">Simpan</button>
                         
@@ -101,4 +98,19 @@
     </div>
 </div>
 
+<script>
+    function bacaGambar(input)
+    {
+        if (input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#gambar_load').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $('#preview_gambar').change(function(){
+        bacaGambar(this);
+    });
+</script>
 

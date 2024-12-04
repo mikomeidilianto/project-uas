@@ -55,7 +55,15 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url ('Admin') ?>/assets/css/soft-ui-dashboard.min.css?v=1.1.0" rel="stylesheet" />
   <link id="pagestyle2" href="<?= base_url ('Admin') ?>\assets\css\style-global.css" rel="stylesheet" />
- 
+
+  <!-- jquery -->
+  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/jquery.min.js"></script> 
+   <!--   Core JS Files   -->
+   <script src="<?= base_url ('Admin') ?>/assets/js/core/popper.min.js"></script>
+  <script src="<?= base_url ('Admin') ?>/assets/js/core/bootstrap.min.js"></script>
+  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/chartjs.min.js"></script>
   <!-- Anti-flicker snippet (recommended)  -->
   </head>
   
@@ -178,7 +186,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url ('Admin') ?>/pages/sign-in.html">
+          <a class="nav-link  " href="<?= base_url('admin/Login') ?>">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -255,12 +263,7 @@
   </footer>
 </div> -->
    
-  <!--   Core JS Files   -->
-  <script src="<?= base_url ('Admin') ?>/assets/js/core/popper.min.js"></script>
-  <script src="<?= base_url ('Admin') ?>/assets/js/core/bootstrap.min.js"></script>
-  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="<?= base_url ('Admin') ?>/assets/js/plugins/chartjs.min.js"></script>
+ 
   
   
   <!-- Github buttons -->

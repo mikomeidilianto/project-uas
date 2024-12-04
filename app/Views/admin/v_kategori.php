@@ -30,7 +30,7 @@
               }
               ?>
               <div class="table-responsive p-0">
-                  <table class="table align-items-center justify-content-center mb-0">
+                  <table class="table justify-content-center mb-0">
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>

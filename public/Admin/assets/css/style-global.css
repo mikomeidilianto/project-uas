@@ -12,3 +12,35 @@ body {
    width: 100%;
    color: white;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+   width: 30px;
+   height: 30px;
+   /* Set the background color of the buttons */
+   border-radius: 50%; /* Make the buttons circular */
+}
+
+/* Adjust the positioning of the buttons */
+.carousel-control-prev,
+.carousel-control-next {
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+/* Adjust the spacing between the buttons and the carousel */
+.carousel-control-prev {
+   left: 120px;
+}
+
+.carousel-control-next {
+   right: 120px;
+}
+
+.btn-primary {
+   background-color: #b08e63;
+}
+
+a:hover {
+   background-color: #214836;
+}

@@ -15,40 +15,54 @@
     </section>
     
 
-    <section class="py-2 container-fluid" style="background-color: white; height: 80vh;">
-    <div class="container my-5">
-    <h2 class="text-center mb-4">Our Tenants</h2>
-    <div class="marquee">
-      <div class="marquee-content d-flex justify-content-around align-items-center">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Kopi Beska" class="img-fluid" style="max-height: 80px;">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Diwet" class="img-fluid" style="max-height: 80px;">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Uramen" class="img-fluid" style="max-height: 80px;">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Churih" class="img-fluid" style="max-height: 80px;">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Munchies" class="img-fluid" style="max-height: 80px;">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Hap-Hap" class="img-fluid" style="max-height: 80px;">
-        <img src="<?= base_url('Admin') ?>/assets/img/logo-ct.png" alt="Mytie" class="img-fluid" style="max-height: 80px;">
-      </div>
+    <section class="py-5 container-fluid px-xl-5" style="background-color: white;">
+      
+    <!-- Our Tenants -->
+    <div class="container mt-2 mb-5">
+        <h2 class="text-center mb-4">Our Tenants</h2>
+        <div class="d-flex justify-content-around align-items-center flex-wrap">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Kopi Beska" class="img-fluid" style="max-height: 80px;">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Diwet" class="img-fluid" style="max-height: 80px;">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Uramen" class="img-fluid" style="max-height: 80px;">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Churih" class="img-fluid" style="max-height: 80px;">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Munchies" class="img-fluid" style="max-height: 80px;">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Hap-Hap" class="img-fluid" style="max-height: 80px;">
+            <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Mytie" class="img-fluid" style="max-height: 80px;">
+        </div>
     </div>
-  </div>
 
-  <div class="container my-5">
-    <h2 class="text-center mb-4">Menu</h2>
-    <div class="row">
-      <div class="col-md-6 col-lg-3 mb-4">
-        <!-- Es Kopi Susu Beska -->
-      </div>
-      <div class="col-md-6 col-lg-3 mb-4">
-        <!-- Ramen Tantan -->
-      </div>
-      <div class="col-md-6 col-lg-3 mb-4">
-        <!-- OriWet -->
-      </div>
-      <div class="col-md-6 col-lg-3 mb-4">
-        <!-- Tahu Bakso (isi 3) -->
-      </div>
+    <!-- Menu -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Menu</h2>
+      <div class="row">
+        <?php foreach ($produk as $key => $value) { 
+        $price = number_format($value['price'], 2, ',', '.');
+        ?>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <a href="" class="text-decoration-none">
+                  <div class="card custom-card h-100">
+                        <!-- Gambar menu -->
+                        <img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>"  class="card-img-top" alt="<?= $value['name']; ?>">
+                        <div class="card-body text-left">
+                            <!-- Nama menu -->
+                            <h5 class="card-title"><?= $value['name'] ?></h5>
+                            <!-- Harga menu -->
+                            <div class="">  
+                              <p class="card-text">Rp<?= $price ?></p>
+                            </div>
+                        </div>
+                  </div>
+                  </a>
+            </div>
+          <?php } ?>
+                </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg">LIHAT SELENGKAPNYA</button>
+        </div>
     </div>
-  </div>
-    </section>
+</section>
+
     
     <section class="py-5 container-fluid px-xl-5" style="background-color: #214836;">
         <!-- Judul -->

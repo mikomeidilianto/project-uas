@@ -34,6 +34,29 @@
         .w-80 {
             width: 80%;
         }
+
+        .list-group-item {
+            border: none;
+            /* Menghapus border */
+            background-color: transparent;
+            color: black;
+
+            /* Tidak ada background untuk item yang tidak aktif */
+        }
+
+        .list-group-item.active {
+            background-color: RGBA(112, 153, 147, 0.3);
+            /* Hijau untuk item yang aktif */
+            color: black;
+            /* Mengubah teks menjadi putih pada item aktif */
+            border-radius: 50px;
+        }
+
+        .list-group {
+            background-color: transparent;
+            color: black;
+            /* Menghapus background list-group */
+        }
     </style>
 </head>
 

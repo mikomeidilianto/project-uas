@@ -14,11 +14,12 @@ class Product extends BaseController
         $this->ModelProduk = new ModelProduk();
     }
 
-    public function index() { 
-        $data = [ 
-            'page' => 'user/Dashboard/v_dashboard', 
-            'produk' => $this->ModelProduk->GetData(4), // Atau bisa 6, 8, dst 
-        ]; 
-        return view('user/Dashboard/v_template', $data); 
+    public function index()
+    {
+        $data = [
+            'page' => 'user/Dashboard/v_dashboard',
+            'produk' => $this->ModelProduk->GetData(),
+        ];
+         return view('user/Dashboard/v_template', $data);
     }
 }

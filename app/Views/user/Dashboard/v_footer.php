@@ -2,7 +2,7 @@
       <div class=" container" style="margin-left: 30px; margin-right:10px;">
           <div class=" row">
               <div class="col-md-6">
-                  <img src="<?= base_url('Admin') ?>/assets/img/Footer_Green_Cloud_Kitchen.png" alt="main_logo" class="navbar-brand-img" width="400" height="110" style="margin-bottom: 10px" ;>
+                  <img src="<?= base_url('Admin') ?>/assets/img/Footer_Green-Cloud-Kitchen2.png" alt="main_logo" class="navbar-brand-img" width="430" height="100" style="margin-bottom: 10px" ;>
                   <p style="font-size: 20px">Jl. Pangkalan Jati 1 No.142, Pangkalan Jati, <br> Kec. Cinere, Kota Depok, Jawa Barat 16513</p>
               </div>
               <div class="col-md-3">

@@ -57,7 +57,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a> 
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -184,7 +184,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +237,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +250,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +274,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -291,7 +291,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -315,7 +315,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -328,7 +328,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -340,7 +340,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -352,7 +352,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -369,7 +369,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -381,7 +381,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -393,7 +393,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +406,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -418,7 +418,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -430,7 +430,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -447,7 +447,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +459,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -471,7 +471,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -484,7 +484,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -496,7 +496,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -508,7 +508,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -525,7 +525,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -537,7 +537,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -549,7 +549,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -562,7 +562,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -574,7 +574,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -586,7 +586,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -603,7 +603,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -615,7 +615,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -627,7 +627,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -640,7 +640,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 1</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -652,7 +652,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 2</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -664,7 +664,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Card Title 3</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                    <a href="#" class="btn btn-primary" style="background-color: #214836; border: none;">Tambah</a>
                                 </div>
                             </div>
                         </div>

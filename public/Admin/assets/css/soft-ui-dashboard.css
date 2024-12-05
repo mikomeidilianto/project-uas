@@ -11333,6 +11333,10 @@ fieldset:disabled .btn {
   background-color: transparent !important;
 }
 
+.bg-normal-green {
+  background-color: #214836 !important;
+}
+  
 .bg-gray-100 {
   background-color: #f4f4f5 !important;
 }

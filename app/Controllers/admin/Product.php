@@ -76,23 +76,30 @@ class Product extends BaseController
                     'required' => '{field} Wajib Diisi !!!',
                 ]
                 ],
-            // 'image_path' => [
-            //     'label' => 'Foto',
-            //      'rules' => 'required',
-            //      'errors' => [
-            //          'required' => '{field} Wajib Diisi !!!',
-            //      ]
-            //     ],
+
             'status' => [
                 'label' => 'Status',
                 'rules' => 'required|in_list[active,inactive]',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !!!',
                     'in_list' => '{field} harus berupa Active atau Inactive.',
-                ],
+                ]
             ],
 
+            'foto' => [
+                'label' => 'Foto',
+                 'rules' => 'uploaded[foto]|max_size[foto,10024]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                 'errors' => [
+                     'uploaded' => '{field} Wajib Diupload !!!',
+                     'max_size' => 'Ukuran {field} Max 10MB',
+                     'mime_in' => 'Format {field} Harus JPG/PNG/JPEG/GIF/WEBP',
+                 ]
+                ],
+
         ])) {
+            $foto = $this->request->getFile('foto');
+            $nama_file = $foto->getRandomName();
+
             // Jika valid
             $data = [
                 'name' => $this->request->getPost('name'),
@@ -100,11 +107,13 @@ class Product extends BaseController
                 'price' => $this->request->getPost('price'),
                 'stock' => $this->request->getPost('stock'),
                 'category_id' => $this->request->getPost('category_id'),
-                // 'image_path' => $this->request->getPost('image_path'),
                 'status' => $this->request->getPost('status'),
+                'foto' => $nama_file,
             ];
+
+            $foto->move("Admin/assets/img",$nama_file);
             $this->ModelProduk->InsertData($data);
-            session()->setFlashdata('insert','Data berhasil ditambahkan !!');
+            session()->setFlashdata('insert','Produk berhasil ditambahkan !!');
             return redirect()->to(base_url('admin/Product'));
         } else {
             // Jika tidak valid
@@ -130,10 +139,10 @@ class Product extends BaseController
         if ($this->validate([
             'name' => [
                 'label' => 'Nama Produk',
-                'rules' => 'required|is_unique[products.name]',
+                'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !!!',
-                    'is_unique' => '{field} sudah ada !!!',
+                    
                 ]
                 ],
             'description' => [
@@ -164,31 +173,43 @@ class Product extends BaseController
                     'required' => '{field} Wajib Diisi !!!',
                 ]
                 ],
-            // 'image_path' => [
-            //     'label' => 'Foto',
-            //      'rules' => 'required',
-            //      'errors' => [
-            //          'required' => '{field} Wajib Diisi !!!',
-            //      ]
-            //     ],
             'status' => [
                 'label' => 'Status',
                 'rules' => 'required|in_list[active,inactive]',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !!!',
                     'in_list' => '{field} harus berupa Active atau Inactive.',
+                ]
                 ],
+                'foto' => [
+                'label' => 'Foto',
+                 'rules' => 'max_size[foto,10024]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                 'errors' => [
+                     'uploaded' => '{field} Wajib Diupload !!!',
+                     'max_size' => 'Ukuran {field} Max 10MB',
+                     'mime_in' => 'Format {field} Harus JPG/PNG/JPEG/GIF/WEBP',
+                 ]
                 ],
         ])) {
+            $detailproduk = $this->ModelProduk->DetailData($id);
+            $foto = $this->request->getFile('foto');
+            if ($foto->getError() == 4){
+                $nama_file = $detailproduk['foto'];
+            } else {
+                $nama_file = $foto->getRandomName();
+                $foto->move("Admin/assets/img/",$nama_file);
+            }
+            
             // Jika valid
             $data = [
+                'id' => $id,
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
                 'price' => $this->request->getPost('price'),
                 'stock' => $this->request->getPost('stock'),
                 'category_id' => $this->request->getPost('category_id'),
-                // 'image_path' => $this->request->getPost('image_path'),
                 'status' => $this->request->getPost('status'),
+                'foto' => $nama_file,
             ];
             $this->ModelProduk->UpdateData($data);
             session()->setFlashdata('update','Data Berhasil Diupdate !!');
@@ -202,6 +223,10 @@ class Product extends BaseController
 
     public function Delete($id)
     {
+        $detailproduk = $this->ModelProduk->DetailData($id);
+        if ($detailproduk['foto'] <> ''){
+            unlink('Admin/assets/img/' . $detailproduk['foto']);
+        }
         $data = [
             'id' => $id,
         ];

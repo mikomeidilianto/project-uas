@@ -7,13 +7,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?= base_url('Admin') ?>/assets/img/buy1get1.png" class="d-block w-90 mt-5 mb-3 mx-auto" alt="...">
+            <img src="<?= base_url('Admin') ?>/assets/img/buy1get1.png" class="d-block w-75 mt-5 mb-3 mx-auto" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('Admin') ?>/assets/img/buy1get1.png" class="d-block w-90 mt-5 mb-3 mx-auto" alt="...">
+            <img src="<?= base_url('Admin') ?>/assets/img/buy1get1.png" class="d-block w-75 mt-5 mb-3 mx-auto" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="<?= base_url('Admin') ?>/assets/img/buy1get1.png" class="d-block w-90 mt-5 mb-3 mx-auto" alt="...">
+            <img src="<?= base_url('Admin') ?>/assets/img/buy1get1.png" class="d-block w-75 mt-5 mb-3 mx-auto" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

@@ -30,13 +30,14 @@
               }
               ?>
               <div class="table-responsive p-0">
-                  <table class="table align-items-center justify-content-center mb-0">
+                  <table class="table justify-content-center mb-0">
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nama</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Deskripsi</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Foto</th>
                     </tr>
                   </thead>
                   <tbody> 
@@ -51,6 +52,9 @@
                       </td>
                       <td>
                         <span class="text-xs font-weight-bold"><?= $value['description'] ?></span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold"><img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" width="150px" height="180px"></span>
                       </td>
                       <td>
                         <a href="<?= base_url('admin/Kategori/Edit/' . $value['id']) ?>" class="btn btn-warning">Edit</a>

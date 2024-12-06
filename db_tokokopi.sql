@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2024 at 08:51 AM
+-- Generation Time: Dec 06, 2024 at 08:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.3.13
 
@@ -30,16 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `description` text DEFAULT NULL
+  `description` text DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `description`) VALUES
-(1, 'Minuman', 'Coffee & Non Coffee'),
-(2, 'Makanan', 'Snacks');
+INSERT INTO `categories` (`id`, `name`, `description`, `foto`) VALUES
+(1, 'Minumans', 'Coffee & Non Coffees', '1733320992_9c7724ed6aae30556288.jpg'),
+(2, 'Makanan', 'Snacks', '1733321351_7c7ffccbdc08509a1316.png'),
+(3, 'Aksesoris', 'tumblr dan gantungan kunci', NULL),
+(7, 'Roti O', 'Rotiiii', NULL),
+(8, 'Green Cloud kithcen', 'uwuuuu', '1733320952_a968b4162d7f7eac9244.jpg');
 
 -- --------------------------------------------------------
 
@@ -79,10 +83,10 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
-  `price` decimal(10,2) NOT NULL,
+  `price` int(255) NOT NULL,
   `stock` int(11) NOT NULL,
   `category_id` int(11) DEFAULT NULL,
-  `image_path` varchar(255) DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL,
   `status` enum('active','inactive') DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -90,8 +94,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `category_id`, `image_path`, `status`) VALUES
-(2, 'Kopi Luwak', 'Kopi ini dari luwak white coffee', 15000.00, 50, 1, NULL, 'active');
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `category_id`, `foto`, `status`) VALUES
+(4, 'Sate Kalajengking', 'Made in Thailand', 50000, 5, 2, '1733309694_0fa38c47926d44fd84f2.jpg', 'inactive'),
+(6, 'Croisant', 'roti croisant', 8000, 0, 7, '1733309702_24c7da8fb70646913af5.jpg', 'inactive'),
+(8, 'French Fries', 'kentang goreng enak tau', 20000, 100, 2, '1733309679_b6bc971dee964cde1260.png', 'active'),
+(10, 'wewewewewreret', 'fdfsf', 15000, 213, 2, '1733397024_812595c3fb2bc8a7c60e.jpg', 'active'),
+(11, 'Hiasan', 'Sedotan', 434434, 100, 8, '1733397109_79e8025c869d0e99b594.png', 'inactive'),
+(12, 'ayam geprek', 'sabana', 8000, 5, 2, '1733407000_42c64d94de9611711f97.jpg', 'active');
 
 -- --------------------------------------------------------
 
@@ -165,7 +174,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `invoice`
@@ -183,7 +192,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`

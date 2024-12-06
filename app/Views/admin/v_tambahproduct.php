@@ -81,6 +81,7 @@
                     <p class="text-danger"><?= isset($errors['foto']) == isset($errors['foto']) ? validation_show_error('foto') : '' ?></p>
                 </div>
                 </div>
+                
                 <div class="col-sm-6">
                 <label>Preview Foto</label>
                 <div class="form-group">

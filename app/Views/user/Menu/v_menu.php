@@ -82,13 +82,13 @@
         <div class="tab-content" id="nav-tabContent">
             <?php foreach ($kategorimenu as $key => $value) { ?>
                 <div class="tab-pane fade <?= $key === 0 ? 'show active' : '' ?>" id="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>" role="tabpanel" aria-labelledby="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>-list">
-                    <div class="row">
+                    <div class="row mt-5">
                         <?php foreach ($produkmenu as $product) { ?>
                             <?php if ($product['category_id'] == $value['id']) { ?>
                                 <div class="col-md-4">
-                                    <div class="card custom-card <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'bg-dark text-white'  : '' ?>">
+                                    <div class="card custom-card mt-4 <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'bg-dark text-white'  : '' ?>">
                                         <?php if ($product['foto']) { ?>
-                                            <img src="<?= base_url('Admin/assets/img/'. $product['foto']) ?>" class="card-img-top" alt="<?= htmlspecialchars($product['name']) ?>">
+                                            <img src="<?= base_url('Admin/assets/img/'. $product['foto']) ?>" class="card-img-top" width="100px" height="300px" alt="<?= htmlspecialchars($product['name']) ?>">
                                         <?php } else { ?>
                                             <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px;">
                                                 <span class="text-center"><?= $product['status'] == 'inactive' ? 'Stok Habis' : 'Foto Tidak Tersedia' ?></span>

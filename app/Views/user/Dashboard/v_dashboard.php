@@ -6,7 +6,6 @@
                 <p style="font-size: 25px;">Pesan Makan Tanpa Antri!</p>
                 <button class="btn btn-outline-light btn-lg" style="background-color: #b08e63; border: none; width:190px">Coba Sekarang</button>
             </div>
-
             <!-- Gambar -->
             <div class="col-lg-6 col-md-6 d-flex justify-content-end align-items-center">
                 <img src="<?= base_url('Admin') ?>/assets/img/Foto-makanan.png" class="img-fluid" style="max-width: 450px; margin-right: -12px;">
@@ -16,7 +15,6 @@
 
 
     <section class="py-5 container-fluid px-xl-5" style="background-color: white;">
-
         <!-- Our Tenants -->
         <div class="container mt-2 mb-5">
             <h2 class="text-center mb-4">Our Tenants</h2>
@@ -30,7 +28,6 @@
                 <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Mytie" class="img-fluid" style="max-height: 80px;">
             </div>
         </div>
-
         <!-- Menu -->
         <div class="container my-5">
             <h2 class="text-center mb-4">Menu</h2>
@@ -59,12 +56,12 @@
                     </div>
                 <?php } ?>
             </div>
-
             <div class="text-center">
                 <button class="btn btn-primary btn-lg">LIHAT SELENGKAPNYA</button>
             </div>
         </div>
     </section>
+
     <section class="py-5 container-fluid px-xl-5" style="background-color: #214836;">
         <!-- Judul -->
         <div class="row py-3">

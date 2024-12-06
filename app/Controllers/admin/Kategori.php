@@ -127,7 +127,7 @@ class Kategori extends BaseController
             $detailkategori = $this->ModelKategori->DetailData($id);
             $foto = $this->request->getFile('foto');
             if ($foto->getError() == 4){
-                $nama_file = $detailproduk['foto'];
+                $nama_file = $detailkategori['foto'];
             } else {
                 $nama_file = $foto->getRandomName();
                 $foto->move("Admin/assets/img/",$nama_file);
@@ -153,9 +153,9 @@ class Kategori extends BaseController
 
     public function Delete($id)
     {
-        $detailproduk = $this->ModelProduk->DetailData($id);
-        if ($detailproduk['foto'] <> ''){
-            unlink('Admin/assets/img/' . $detailproduk['foto']);
+        $detailkategori = $this->ModelKategori->DetailData($id);
+        if ($detailkategori['foto'] <> ''){
+            unlink('Admin/assets/img/' . $detailkategori['foto']);
         }
         $data = [
             'id' => $id,

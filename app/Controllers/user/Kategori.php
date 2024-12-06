@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\admin;
+namespace App\Controllers\user;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -11,14 +11,14 @@ class Product extends BaseController
 {
     public function __construct()
     {
-        $this->ModelProduk = new ModelProduk();
+        $this->ModelKategori = new ModelKategori();
     }
 
     public function index()
     {
         $data = [
             'page' => 'user/Dashboard/v_dashboard',
-            'produk' => $this->ModelProduk->GetData(),
+            'Kategori' => $this->ModelKategori->AllData(),
         ];
          return view('user/Dashboard/v_template', $data);
     }

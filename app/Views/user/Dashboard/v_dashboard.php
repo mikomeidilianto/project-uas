@@ -35,7 +35,9 @@
     <div class="container my-5">
       <h2 class="text-center mb-4">Menu</h2>
       <div class="row">
-        <?php foreach ($produk as $key => $value) { 
+
+        <?php $no = 1; 
+        foreach ($produkhome as $key => $value) {
         $price = number_format($value['price'], 2, ',', '.');
         ?>
             <div class="col-lg-2 col-md-6 mb-4">
@@ -46,6 +48,7 @@
                         <div class="card-body text-left">
                             <!-- Nama menu -->
                             <h5 class="card-title"><?= $value['name'] ?></h5>
+                            <h6 class="card-title"><?= $value['category_name'] ?></h6>
                             <!-- Harga menu -->
                             <div class="">  
                               <p class="card-text">Rp<?= $price ?></p>
@@ -67,7 +70,7 @@
     <section class="py-5 container-fluid px-xl-5" style="background-color: #214836;">
         <!-- Judul -->
         <div class="row py-3">
-            <div class="col-12 text-center text-white">
+            <div class="col-12 text-center text-white" id="about">
                 <h2 style="font-size: 50px;">About Us</h2>
             </div>
         </div>

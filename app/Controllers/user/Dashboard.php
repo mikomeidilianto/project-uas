@@ -3,6 +3,7 @@
 namespace App\Controllers\user;
 
 use App\Controllers\BaseController;
+use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\ModelProduk;
 use App\Models\ModelKategori;
 
@@ -17,7 +18,7 @@ class Dashboard extends BaseController
     {
         $data = [
             'page' => 'user/Dashboard/v_dashboard',
-            'produk' => $this->ModelProduk->AllData(),
+            'produkhome' => $this->ModelProduk->GetData(),
         ];
         return view('user/Dashboard/v_template_dashboard', $data);
     }

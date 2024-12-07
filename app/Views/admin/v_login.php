@@ -16,18 +16,20 @@
     <div class="login-container">
         <div class="login-card">
             <h3>Welcome!</h3>
-            <form>
+            <?php if(session()->getFlashdata('msg')):?>
+                    <div class="alert alert-warning">
+                       <?= session()->getFlashdata('msg') ?>
+                    </div>
+                <?php endif;?>
+            <form action="<?php echo base_url(); ?>/admin/Login/loginAuth" method="post">
                 <label class="form-label" for="username">Username</label>
-                <input type="text" id="username" class="form-input" placeholder="Enter your username" required />
+                <input type="text" id="username" class="form-input" placeholder="Enter your username" value="<?= set_value('nama') ?>" required />
 
                 <label class="form-label" for="password">Password</label>
-                <input type="password" id="password" class="form-input" placeholder="Enter your password" required />
+                <input type="password" id="password" class="form-input" placeholder="Enter your password" value="<?= set_value('password') ?>" required />
 
                 <button type="submit" class="btn">Log In</button>
             </form>
-            <div class="forgot-password">
-                <a href="#">Forgot Password?</a>
-            </div>
         </div>
     </div>
 </body>

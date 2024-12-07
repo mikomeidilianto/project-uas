@@ -1,4 +1,5 @@
 <!-- foto slide -->
+<div class="mt-5">
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators" >
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -25,7 +26,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
+</div>
 
 
 <!-- side bar dan menu -->
@@ -48,45 +49,21 @@
             <?= htmlspecialchars($value['name']); ?>
         </a>
     <?php } ?>
-</div>
-
-        <!-- <div class="list-group" id="list-tab" role="tablist" style="font-weight: 500;">
-            <b></b><a class="list-group-item list-group-item-action active" id="list-kopi_beska-list" data-bs-toggle="list" href="#list-beska" role="tab" aria-controls="list-beska">Kopi Beska</a>
-            <a class="list-group-item list-group-item-action" id="list-uramen-list" data-bs-toggle="list" href="#list-uramen" role="tab" aria-controls="list-uramen">Uramen</a>
-            <a class="list-group-item list-group-item-action" id="list-geprek_goo-list" data-bs-toggle="list" href="#list-geprek" role="tab" aria-controls="list-geprek">Geprek Goo</a>
-            <a class="list-group-item list-group-item-action" id="list-ghurih-list" data-bs-toggle="list" href="#list-ghurih" role="tab" aria-controls="list-ghurih">Ghurih</a>
-            <a class="list-group-item list-group-item-action" id="list-mauchurros-list" data-bs-toggle="list" href="#list-mauchurros" role="tab" aria-controls="list-mauchurros">Mauchurros</a>
-            <a class="list-group-item list-group-item-action" id="list-mie_hap_hap-list" data-bs-toggle="list" href="#list-miehap" role="tab" aria-controls="list-miehap">Mie Hap Hap</a>
-            <a class="list-group-item list-group-item-action" id="list-tuan_dawet_indonesia-list" data-bs-toggle="list" href="#list-dawet" role="tab" aria-controls="list-dawet">Tuan Dawet Indonesia</a>
-            <a class="list-group-item list-group-item-action" id="list-my_honey-list" data-bs-toggle="list" href="#list-honey" role="tab" aria-controls="list-honey">My Honey</a>
-        </div> -->
-        
+</div> 
     </div>
-    <!-- side bar dan menu
-<div class="row mt-5" style="width: 200vh;">
-    <div class="col-2" style=" margin-left: 85px !important;">
-        <h4> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-            </svg> Semua Tenant</h4>
-
-        <div class="list-group" id="list-tab" role="tablist" style="font-weight: 500;">
-            <?php foreach ($kategorimenu as $key => $value) { ?>
-                <a class="list-group-item list-group-item-action <?= $key === 0 ? 'active' : '' ?>" id="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>-list" data-bs-toggle="list" href="#list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>" role="tab" aria-controls="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>">
-                    <?= htmlspecialchars($value['name']); ?>
-                </a>
-            <?php } ?>
-        </div>
-    </div> -->
 
     <div class="col-8">
         <div class="tab-content" id="nav-tabContent">
             <?php foreach ($kategorimenu as $key => $value) { ?>
                 <div class="tab-pane fade <?= $key === 0 ? 'show active' : '' ?>" id="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>" role="tabpanel" aria-labelledby="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>-list">
-                    <div class="row mt-5">
-                        <?php foreach ($produkmenu as $product) { ?>
+                    <div class="row mt-3">
+                        <?php foreach ($produkmenu as $product) { 
+                            $price = number_format($product['price'], 2, ',', '.');
+                            ?>
+                           
                             <?php if ($product['category_id'] == $value['id']) { ?>
-                                <div class="col-md-4">
-                                    <div class="card custom-card mt-4 <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'bg-dark text-white'  : '' ?>">
+                                <div class="col-md-4 mt-4">
+                                    <div class="card custom-card  <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'bg-dark text-white'  : '' ?>">
                                         <?php if ($product['foto']) { ?>
                                             <img src="<?= base_url('Admin/assets/img/'. $product['foto']) ?>" class="card-img-top" width="100px" height="300px" alt="<?= htmlspecialchars($product['name']) ?>">
                                         <?php } else { ?>
@@ -96,8 +73,9 @@
                                         <?php } ?>
                                         <div class="card-body">
                                             <h5 class="card-title"><?= htmlspecialchars($product['name']); ?></h5>
-                                            <p class="card-text"><?= htmlspecialchars($product['description']); ?></p>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #214836; border: none;" <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'disabled' : '' ?>>Tambah</button>
+                                            <p class="card-text">Rp. <?= htmlspecialchars($price); ?></p>
+                                            <button type="submit" value="submit" class="btn btn-primary add-to-cart data-product-id="<?= $product['id'] ?>" style="background-color: #214836; border: none;" <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'disabled' : ''?>
+                                            ><?=$product['status'] == 'inactive' || $product['stock'] <= 0 ? 'Habis' : 'Tambah'  ?></button>
                                         </div>
                                     </div>
                                 </div>

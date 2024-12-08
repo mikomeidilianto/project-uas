@@ -11,3 +11,4 @@ $routes->match(['get', 'post'], 'LoginController/loginAuth', 'LoginController::l
 $routes->get('/v_login', 'LoginController::index');
 $routes->get('/logout', 'LoginController::logout');
 $routes->get('/dashboard', 'Dashboard::index',['filter' => 'authGuard']);
+$routes->get('/pesanan', 'user\Pesanan::index');

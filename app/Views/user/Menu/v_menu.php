@@ -30,7 +30,7 @@
 
 
 <!-- side bar dan menu -->
-<div class="row mt-5" style="width: 200vh;">
+<div class="row mt-5" style="width: 200vh; margin-bottom: 200px !important;"">
     <div class="col-2" style=" margin-left: 85px !important;">
         <h4> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
@@ -56,7 +56,7 @@
         <div class="tab-content" id="nav-tabContent">
             <?php foreach ($kategorimenu as $key => $value) { ?>
                 <div class="tab-pane fade <?= $key === 0 ? 'show active' : '' ?>" id="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>" role="tabpanel" aria-labelledby="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>-list">
-                    <div class="row mt-3" style="margin-bottom: 200px !important;">
+                    <div class="row mt-3" >
                         <?php foreach ($produkmenu as $product) { 
                             $price = number_format($product['price'], 2, ',', '.');
                             ?>

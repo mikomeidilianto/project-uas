@@ -35,7 +35,7 @@
 
 <body>
     <!-- Navbar -->
-    <?php echo view('user/Dashboard/v_navbar_dashboard'); ?> 
+    <?php echo view('user/v_navbar'); ?> 
 
     <main>
         
@@ -43,7 +43,7 @@
     </main>
 
     <!-- Footer -->
-    <?php echo view('user/Dashboard/v_footer'); ?> 
+    <?php echo view('user/v_footer'); ?> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

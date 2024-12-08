@@ -63,11 +63,11 @@
 </head>
 
 <body>
-    <?php echo view('user/Menu/v_navbar_menu'); ?>
+    <?php echo view('user/v_navbar'); ?>
     <main>
         <?php echo view($page); ?> <!-- Memanggil view yang di controller -->
     </main>
-    <?php echo view('user/Dashboard/v_footer'); ?>
+    <?php echo view('user/v_footer'); ?>
 
 </body>
 

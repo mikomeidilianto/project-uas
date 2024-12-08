@@ -62,11 +62,11 @@
         </div>
     </section>
 
-    <section class="py-5 container-fluid px-xl-5" style="background-color: #214836;">
+    <section class="py-5 container-fluid px-xl-5" style="background-color: #214836;" id="about">
         <!-- Judul -->
         <div class="row py-3">
             <div class="col-12 text-center text-white">
-                <h2 style="text-center mb-4">About Us</h2>
+                <h2 style="text-center mb-4" >About Us</h2>
             </div>
         </div>
         <!-- Gambar dan Deskripsi -->

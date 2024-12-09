@@ -7,8 +7,6 @@ class Home extends BaseController
 {
     public function index()
     {
-        $session = session();
-        echo "Hello : ".$session->get('nama');
         $data = [
             'judul' => 'Dashboard',
             'page' => 'admin/v_home',

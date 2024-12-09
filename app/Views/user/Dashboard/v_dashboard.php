@@ -1,3 +1,13 @@
+    <style>
+        .tenant-logo {
+            height: 150px !important;
+            /* Menambahkan !important */
+            width: 150px !important;
+            /* Menambahkan !important */
+            object-fit: contain;
+        }
+    </style>
+
     <section class="py-2 container-fluid ps-xl-5" style="background-color: #214836; height: 80vh;">
         <div class="row py-lg-5">
             <!-- Konten Teks -->
@@ -14,20 +24,72 @@
     </section>
 
 
-    <section class="py-5 container-fluid px-xl-5" style="background-color: white;">
+    <section class="py-5 container-fluid px-xl-5" style="background-color: #F5F0E3;">
         <!-- Our Tenants -->
         <div class="container mt-2 mb-5">
             <h2 class="text-center mb-4">Our Tenants</h2>
-            <div class="d-flex justify-content-around align-items-center flex-wrap">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Kopi Beska" class="img-fluid" style="max-height: 80px;">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Diwet" class="img-fluid" style="max-height: 80px;">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Uramen" class="img-fluid" style="max-height: 80px;">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Churih" class="img-fluid" style="max-height: 80px;">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Munchies" class="img-fluid" style="max-height: 80px;">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Hap-Hap" class="img-fluid" style="max-height: 80px;">
-                <img src="<?= base_url('Admin') ?>/assets/img/logo-ct-dark.png" alt="Mytie" class="img-fluid" style="max-height: 80px;">
+            <div class="marquee-container" style="height: 200px;">
+                <div class="marquee-content" style="height: 200px;">
+                    <!-- First set of logos -->
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0000.png" alt="Kopi Beska" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0001.png" alt="Diwet" class="tenant-logo height=" 100px" width="100px"">
+                    <img src=" <?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0002.png" alt="Uramen" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Untitled design (41).png" alt="Churih" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Untitled design (41).png" alt="Munchies" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0005.png" alt="Hap-Hap" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0006.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0007.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0000.png" alt="Kopi Beska" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0001.png" alt="Diwet" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0002.png" alt="Uramen" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0003.png" alt="Churih" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0004.png" alt="Munchies" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0005.png" alt="Hap-Hap" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0006.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0007.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
+
+                    <!-- Duplicate the first set of logos -->
+                </div>
             </div>
         </div>
+
+        <!-- Inline CSS for the marquee animation -->
+        <style>
+            .marquee-container {
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            .marquee-content {
+                display: flex;
+                animation: marquee 20s linear infinite;
+            }
+
+            .marquee-content:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            .tenant-logo {
+                flex: 0 0 auto;
+                max-height: 80px;
+                margin-right: 30px;
+                object-fit: contain;
+            }
+        </style>
+
+
+
         <!-- Menu -->
         <div class="container my-5">
             <h2 class="text-center mb-4">Menu</h2>
@@ -66,7 +128,7 @@
         <!-- Judul -->
         <div class="row py-3">
             <div class="col-12 text-center text-white">
-                <h2 style="text-center mb-4" >About Us</h2>
+                <h2 style="text-center mb-4">About Us</h2>
             </div>
         </div>
         <!-- Gambar dan Deskripsi -->

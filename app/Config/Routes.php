@@ -7,3 +7,5 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'user\Dashboard::index');
 $routes->get('Menu', 'user\Menu::index');
+$routes->get('/pesanan', 'user\Pesanan::index');
+

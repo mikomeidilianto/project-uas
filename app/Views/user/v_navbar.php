@@ -46,7 +46,7 @@
 
 <script>
     // Muat isi keranjang saat sidebar dibuka
-    document.getElementById('cartSidebar').addEventListener('show.bs.offcanvas', function () {
+    addEventListener("DOMContentLoaded", (event) =>  {
         loadCart();
     });
 
@@ -76,7 +76,7 @@
         cart.forEach(item => {
             let itemTotal = item.price * item.quantity;
             totalCart += itemTotal;
-
+            
             cartContent += `
                 <div class="cart-item" style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
                     <div class="row">
@@ -84,17 +84,17 @@
                             <img src="<?= base_url('Admin/assets/img/') ?>${item.foto}" class="img-fluid" alt="${item.name}">
                         </div>
                         <div class="col-8">
-                            <h6>${item.name}</h6>
+                            <h6>${item.product_name}</h6>
                             <div class="d-flex align-items-center" style="gap: 10px;">
-                                <button class="btn btn-sm btn-secondary" onclick="changeQuantity('minus', ${item.id})">-</button>
+                                <button class="btn btn-sm btn-secondary" onclick="changeQuantity('minus', ${item.id_product})">-</button>
                                 <span id="quantity-${item.id}" style="font-size: 16px; font-weight: bold;">${item.quantity}</span>
-                                <button class="btn btn-sm btn-secondary" onclick="changeQuantity('plus', ${item.id})">+</button>
+                                <button class="btn btn-sm btn-secondary" onclick="changeQuantity('plus', ${item.id_product})">+</button>
                             </div>
                             <p>Total: Rp<span id="total-${item.id}">${itemTotal.toFixed(2)}</span></p>
                         </div>
                     </div>
                 </div>`;
-                console.log()
+                
         });
 
         cartContent += `

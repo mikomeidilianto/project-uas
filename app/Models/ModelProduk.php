@@ -6,6 +6,10 @@ use CodeIgniter\Model;
 
 class ModelProduk extends Model
 {
+    protected $table = 'products';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['name', 'price', 'foto', 'description'];
+
     public function AllData()
     {
         // Melakukan join antara tabel 'products' dan 'categories' berdasarkan category_id

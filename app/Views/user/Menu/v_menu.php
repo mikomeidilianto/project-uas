@@ -60,7 +60,7 @@
                         <?php foreach ($produkmenu as $product) {
                             $price = number_format($product['price'], 2, ',', '.');
                         ?>
-
+                            
                             <?php if ($product['category_id'] == $value['id']) { ?>
                                 <div class="col-md-4 mt-4">
                                     <div class="card custom-card  <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'bg-dark text-white'  : '' ?>">
@@ -74,12 +74,12 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><?= htmlspecialchars($product['name']); ?></h5>
                                             <p class="card-text">Rp. <?= htmlspecialchars($price); ?></p>
-                                            <button type="button" class="btn btn-primary tambah-ke-keranjang"
+                                            <button type="button" class="btn btn-primary tambah-ke-keranjang" 
                                                 style="background-color: #214836; border: none;"
+                                                onclick="addToCart(<?= $product['id'] ?>)"
                                                 <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'disabled' : '' ?>>
                                                 <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'Habis' : 'Tambah' ?>
                                             </button>
-
                                         </div>
                                     </div>
                                 </div>
@@ -93,4 +93,48 @@
 </div>
 </div>
 
-</div>
+</div>  
+
+<script>
+    // Fungsi untuk menambahkan produk ke keranjang
+    function addToCart(id_product) {
+        fetch("<?= site_url('user/Keranjang/addToCart') ?>", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            body: JSON.stringify({
+                id_product: id_product,
+                quantity: 1
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                updateCartCount(); // Perbarui badge jumlah item di navbar
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Fungsi untuk memperbarui jumlah item di badge navbar
+    function updateCartCount() {
+        fetch("<?= site_url('user/Keranjang/getCart') ?>", {
+            method: "GET",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.querySelector('.cart-count').innerText = data.cartCount;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>

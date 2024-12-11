@@ -31,24 +31,11 @@
             <div class="marquee-container" style="height: 200px;">
                 <div class="marquee-content" style="height: 200px;">
                     <!-- First set of logos -->
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0000.png" alt="Kopi Beska" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0001.png" alt="Diwet" class="tenant-logo height=" 100px" width="100px"">
-                    <img src=" <?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0002.png" alt="Uramen" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Untitled design (41).png" alt="Churih" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Untitled design (41).png" alt="Munchies" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0005.png" alt="Hap-Hap" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0006.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0007.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0000.png" alt="Kopi Beska" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0001.png" alt="Diwet" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204941_0002.png" alt="Uramen" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0003.png" alt="Churih" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0004.png" alt="Munchies" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0005.png" alt="Hap-Hap" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0006.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
-                    <img src="<?= base_url('Admin') ?>/assets/img/Uramen (500 x 500 px)_20241204_204942_0007.png" alt="Mytie" class="tenant-logo" height="100px" width="100px">
-
+                    <?php $no = 1; 
+                    foreach ($kategori as $key => $value) { ?>
+                    <img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" alt="<?= $value['name']; ?>" class="tenant-logo" height="100px" width="100px">
                     <!-- Duplicate the first set of logos -->
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -76,9 +63,11 @@
                 }
 
                 100% {
-                    transform: translateX(-100%);
+                    transform: translateX(calc(-100% - 1rem));
                 }
             }
+            
+            
 
             .tenant-logo {
                 flex: 0 0 auto;

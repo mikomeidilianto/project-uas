@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2024 at 07:38 PM
+-- Generation Time: Dec 06, 2024 at 08:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.3.13
 
@@ -39,14 +39,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `foto`) VALUES
-(1, 'Kopi Beska', 'Coffee & Non Coffees', '1733755342_6152f5f4f983ab4963c9.png'),
-(2, 'Uramen', 'Ramen noodles', '1733755385_a45607687f078e03a542.png'),
-(3, 'Geprek Goo', 'Ayam Geprek Goo', '1733755433_47f26ec7610d8d72dacc.png'),
-(4, 'Ghurih', 'Tahu Baso gurih', '1733755476_4956c9d6d2c019fcaed0.png'),
-(5, 'Mauchurros', 'Churros enak', '1733755561_50151599a603ae8dca47.png'),
-(6, 'Mie Hap Hap', 'Mie goreng hap hap', '1733755588_0b57f87a0d28ab74ee94.png'),
-(7, 'Tuan Dawet Indonesia', 'Es Dawet terenak', '1733755616_3da7ea18443b0afb91f3.png'),
-(8, 'My Honey', 'Gorengan fry', '1733755650_efa613a6e04cc5dc1b56.png');
+(1, 'Minumans', 'Coffee & Non Coffees', '1733320992_9c7724ed6aae30556288.jpg'),
+(2, 'Makanan', 'Snacks', '1733321351_7c7ffccbdc08509a1316.png'),
+(3, 'Aksesoris', 'tumblr dan gantungan kunci', NULL),
+(7, 'Roti O', 'Rotiiii', NULL),
+(8, 'Green Cloud kithcen', 'uwuuuu', '1733320952_a968b4162d7f7eac9244.jpg');
 
 -- --------------------------------------------------------
 
@@ -61,27 +58,6 @@ CREATE TABLE `invoice` (
   `quantity` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `keranjang`
---
-
-CREATE TABLE `keranjang` (
-  `id` int(11) NOT NULL,
-  `id_product` int(11) NOT NULL,
-  `quantity` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `keranjang`
---
-
-INSERT INTO `keranjang` (`id`, `id_product`, `quantity`) VALUES
-(51, 8, 4),
-(52, 10, 2),
-(53, 12, 2);
 
 -- --------------------------------------------------------
 
@@ -119,14 +95,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `category_id`, `foto`, `status`) VALUES
-(4, 'Sate Kalajengking', 'Made in Thailand', 50000, 5, 1, '1733756092_a6567bccf1ef1362c84d.jpg', 'inactive'),
-(6, 'Croisant', 'roti croisant', 8000, 0, 4, '1733309702_24c7da8fb70646913af5.jpg', 'inactive'),
-(8, 'French Fries', 'kentang goreng enak tau', 20000, 100, 1, '1733309679_b6bc971dee964cde1260.png', 'active'),
-(10, 'wewewewewreret', 'fdfsf', 15000, 213, 1, '1733397024_812595c3fb2bc8a7c60e.jpg', 'active'),
-(11, 'Hiasan', 'Sedotan', 434434, 100, 5, '1733397109_79e8025c869d0e99b594.png', 'inactive'),
-(12, 'ayam geprek', 'sabana', 8000, 5, 1, '1733407000_42c64d94de9611711f97.jpg', 'active'),
-(13, 'valen', 'gatau', 50000, 23, 1, '1733470233_69f46ee9acf498e96d15.png', 'active'),
-(14, 'valen123', 'gatau', 50000, 23, 1, '1733685461_e0c6cf791c5ed0f01d42.png', 'active');
+(4, 'Sate Kalajengking', 'Made in Thailand', 50000, 5, 2, '1733309694_0fa38c47926d44fd84f2.jpg', 'inactive'),
+(6, 'Croisant', 'roti croisant', 8000, 0, 7, '1733309702_24c7da8fb70646913af5.jpg', 'inactive'),
+(8, 'French Fries', 'kentang goreng enak tau', 20000, 100, 2, '1733309679_b6bc971dee964cde1260.png', 'active'),
+(10, 'wewewewewreret', 'fdfsf', 15000, 213, 2, '1733397024_812595c3fb2bc8a7c60e.jpg', 'active'),
+(11, 'Hiasan', 'Sedotan', 434434, 100, 8, '1733397109_79e8025c869d0e99b594.png', 'inactive'),
+(12, 'ayam geprek', 'sabana', 8000, 5, 2, '1733407000_42c64d94de9611711f97.jpg', 'active');
 
 -- --------------------------------------------------------
 
@@ -171,13 +145,6 @@ ALTER TABLE `invoice`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `keranjang`
---
-ALTER TABLE `keranjang`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_product` (`id_product`);
-
---
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -207,19 +174,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `keranjang`
---
-ALTER TABLE `keranjang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -231,7 +192,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -251,12 +212,6 @@ ALTER TABLE `invoice`
   ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
--- Constraints for table `keranjang`
---
-ALTER TABLE `keranjang`
-  ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
@@ -266,7 +221,7 @@ ALTER TABLE `orders`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

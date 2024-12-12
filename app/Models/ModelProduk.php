@@ -25,7 +25,7 @@ class ModelProduk extends Model
         return $this->db->table('products')
         ->join('categories', 'categories.id = products.category_id', 'left')
         ->select('products.*, categories.name AS category_name')
-        ->limit(4) // Membatasi hasil hanya 4 data
+        ->limit(6) // Membatasi hasil hanya 6 data
         ->get()
         ->getResultArray();
     }

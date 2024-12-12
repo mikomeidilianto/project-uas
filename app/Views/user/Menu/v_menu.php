@@ -30,7 +30,7 @@
 
 
 <!-- side bar dan menu -->
-<div class="row mt-5" style="width: 200vh; margin-bottom: 200px !important;">
+<div class="row mt-5" style="width: 200vh; margin-bottom: 200px !important;" id="menu">
     <div class="col-2" style=" margin-left: 85px !important;">
         <h4> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
@@ -65,7 +65,7 @@
                                 <div class="col-md-4 mt-4">
                                     <div class="card custom-card  <?= $product['status'] == 'inactive' || $product['stock'] <= 0 ? 'bg-dark text-white'  : '' ?>">
                                         <?php if ($product['foto']) { ?>
-                                            <img src="<?= base_url('Admin/assets/img/' . $product['foto']) ?>" class="card-img-top" width="100px" height="300px" alt="<?= htmlspecialchars($product['name']) ?>">
+                                            <img src="<?= base_url('Admin/assets/img/' . $product['foto']) ?>" class="card-img-top object-fit-cover" width="100vh" height="300vh" alt="<?= htmlspecialchars($product['name']) ?>">
                                         <?php } else { ?>
                                             <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px;">
                                                 <span class="text-center"><?= $product['status'] == 'inactive' ? 'Stok Habis' : 'Foto Tidak Tersedia' ?></span>

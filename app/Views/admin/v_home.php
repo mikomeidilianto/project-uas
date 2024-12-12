@@ -7,7 +7,6 @@
     <title>Dashboard Green Cloud Kitchen</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
             padding: 20px;
@@ -157,7 +156,7 @@
 <body>
     <!-- Kategori Makanan (Dropdown) -->
     <div class="category-section">
-        <h4 class="dropdown-toggle" onclick="toggleMenu('makanan')">Makanan 🥐</h4>
+        <h4 class="dropdown-toggle" onclick="toggleMenu('makanan')">Product</h4>
         <div id="makanan" class="menu-section">
             <div class="menu-item">
                 <img src="<?= base_url('Admin') ?>/assets/img/sate kalajengking.jpg" alt="Sate Kalajengking">
@@ -180,7 +179,7 @@
 
     <!-- Kategori Minuman (Dropdown) -->
     <div class="category-section">
-        <h4 class="dropdown-toggle" onclick="toggleMenu('minuman')">Minuman 🧉</h4>
+        <h4 class="dropdown-toggle" onclick="toggleMenu('minuman')">Tenant</h4>
         <div id="minuman" class="menu-section">
             <div class="menu-item">
                 <img src="<?= base_url('Admin') ?>/assets/img/kopi susu.jpg" alt="Kopi Susu">
@@ -204,7 +203,7 @@
     <!-- Status Orderan -->
     <div class="order-status">
         <p>Status Orderan:</p>
-        <div class="order-item-container">
+        <!-- <div class="order-item-container">
             <div class="order-item">
                 <img src="<?= base_url('Admin') ?>/assets/img/es teh manis.jpg" alt="Teh Manis Dingin">
                 <div class="menu-info">
@@ -226,7 +225,7 @@
             </div>
             <button class="status-button" id="statusButton2" onclick="changeStatus()">Konfirmasi Pesanan</button>
         </div>
-    </div>
+    </div> -->
 
     <script>
         // Toggle visibility of the menu (makanan or minuman)

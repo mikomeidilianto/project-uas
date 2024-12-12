@@ -2,10 +2,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Kategori</h6>
-            </div>
-            <div class="col-11 text-end">
-              <a href="<?= base_url('admin/Kategori/Tambah') ?>" class="btn btn-primary btn-xm text-end mt-n5 me-n6">Tambah</a>
+              <h6>Konfimasi Pesanan</h6>
             </div>
             
             <div class="card-body px-4 pt-0 pb-2">
@@ -35,34 +32,32 @@
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nama</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Deskripsi</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Foto</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">NIM</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nomor telepon</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pesanan</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Konfirmasi</th>
+                      
+                      
                       
                     </tr>
                   </thead>
                   <tbody> 
-                    <?php $no = 1; 
-                    foreach ($kategori as $key => $value) { ?>
                     <tr>
+                      <td><span class="text-xs font-weight-bold">1</span></td>
+                      <td><span class="text-xs font-weight-bold">Miko Meidilianto</span></td>
+                      <td><span class="text-xs font-weight-bold">2310512133</span></td>
+                      <td><span class="text-xs font-weight-bold">081310944581</span></td>
+                      <td><span class="text-xs font-weight-bold">x2 Americano <br>Rp.38.000,00</span></td>
+                      <td><span class="text-xs font-weight-bold badge badge-sm bg-gradient-secondary">Pending</span></td>
                       <td>
-                        <span class="text-xs font-weight-bold text-center"><?= $no++ ?></span>
-                    </td>
-                      <td>
-                      <span class="text-xs font-weight-bold"><?= $value['name'] ?></span>
-                      </td>
-                      <td>
-                        <span class="text-xs font-weight-bold"><?= $value['description'] ?></span>
-                      </td>
-                      <td>
-                        <span class="text-xs font-weight-bold"><img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" width="150px" height="180px"></span>
-                      </td>
-                      <td>
-                        <a href="<?= base_url('admin/Kategori/Edit/' . $value['id']) ?>" class="btn btn-warning">Edit</a>
-                        <a href="<?= base_url('admin/Kategori/Delete/' . $value['id']) ?>" onclick="return confirm('Yakin Hapus Data?')" class="btn btn-danger">Delete</a>
+                      
+                        
+                        <a href="" class="btn btn-success">Terima</a>
+                        <a href="" class="btn btn-danger">Tolak</a>
+                      
                       </td>
                     </tr>
-                    <?php } ?>
                   </tbody>
                 </table>
               </div>

@@ -14,7 +14,8 @@
             <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-center text-white" style="padding-left: 50px;">
                 <h1 style="font-size: 60px;">Green Cloud Kitchen</h1>
                 <p style="font-size: 25px;">Pesan Makan Tanpa Antri!</p>
-                <button class="btn btn-outline-light btn-lg" style="background-color: #b08e63; border: none; width:190px">Coba Sekarang</button>
+                <a class="btn btn-outline-light btn-lg" href="/Menu" style="background-color: #b08e63; border: none; width:190px">Coba Sekarang
+                </a>
             </div>
             <!-- Gambar -->
             <div class="col-lg-6 col-md-6 d-flex justify-content-end align-items-center">
@@ -33,7 +34,7 @@
                     <!-- First set of logos -->
                     <?php $no = 1; 
                     foreach ($kategori as $key => $value) { ?>
-                    <img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" alt="<?= $value['name']; ?>" class="tenant-logo" height="100px" width="100px">
+                    <img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" alt="<?= $value['name']; ?>" class="tenant-logo " height="100px" width="100px">
                     <!-- Duplicate the first set of logos -->
                     <?php } ?>
                 </div>
@@ -92,7 +93,7 @@
                         <a href="" class="text-decoration-none">
                             <div class="card custom-card h-100">
                                 <!-- Gambar menu -->
-                                <img src="<?= base_url('Admin/assets/img/' . $value['foto']) ?>" class="card-img-top" alt="<?= $value['name']; ?>">
+                                <img src="<?= base_url('Admin/assets/img/' . $value['foto']) ?>" class="card-img-top" width="100vh" height="200vh" alt="<?= $value['name']; ?>">
                                 <div class="card-body text-left">
                                     <!-- Nama menu -->
                                     <h5 class="card-title"><?= $value['name'] ?></h5>
@@ -108,7 +109,9 @@
                 <?php } ?>
             </div>
             <div class="text-center">
-                <button class="btn btn-primary btn-lg">LIHAT SELENGKAPNYA</button>
+                <a class="btn btn-outline-light btn-lg" href="/Menu/#menu" style="background-color: #b08e63; border: none;">
+                    LIHAT SELENGKAPNYA
+                </a>
             </div>
         </div>
     </section>

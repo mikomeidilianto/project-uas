@@ -49,9 +49,9 @@
 
                 <div class="col-sm-6">
                 <div class="form-group">
-                    <label>Kategori</label>
+                    <label>Tenant</label>
                     <select name="category_id" class="form-control">
-                        <option value="" selected disabled>--Pilih Kategori--</option>
+                        <option value="" selected disabled>--Pilih Tenant--</option>
                         <?php foreach ($kategori as $key => $value) { ?>
                             <option 
                             value="<?= $value['id'] ?>" 

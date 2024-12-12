@@ -10,7 +10,7 @@ class Konfirmasi extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Konfirmasi Pembayaran',
+            'judul' => 'Konfirmasi Pesanan',
             'page' => 'admin/v_konfirmasi',
             'menu' => 'konfirmasi',
         ];

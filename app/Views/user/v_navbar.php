@@ -39,7 +39,7 @@
     <div class="offcanvas-body" id="cartContent">
         <!-- Keranjang akan diperbarui melalui AJAX -->
         <div class="text-center">
-            <p>Loading...</p>
+            <p></p>
         </div>
     </div>
 </div>
@@ -72,6 +72,15 @@
     function renderCart(cart) {
         let cartContent = '';
         let totalCart = 0;
+        
+
+        if (cart.length === 0) {
+        // Jika keranjang kosong
+        cartContent += `
+            <div class="text-center">
+                <p>Keranjang Anda kosong</p>
+            </div>`;
+        } else {
 
         cart.forEach(item => {
             let itemTotal = item.price * item.quantity;
@@ -81,7 +90,7 @@
                 <div class="cart-item" style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
                     <div class="row">
                         <div class="col-4">
-                            <img src="<?= base_url('Admin/assets/img/') ?>${item.foto}" class="img-fluid" alt="${item.name}">
+                            <img src="<?= base_url('Admin/assets/img/') ?>${item.foto}" class="img-fluid object-fit-cover" style="width: 200px; height: 100px;" alt="${item.name}">
                         </div>
                         <div class="col-8">
                             <h6>${item.product_name}</h6>
@@ -100,9 +109,8 @@
         cartContent += `
             <hr>
             <h6>Total: Rp<span id="cartTotal">${totalCart.toFixed(2)}</span></h6>
-            <a href="<?= site_url('pesanan') ?>" class="btn w-100" style="background-color: #214836; color: white;">Checkout</a>
-        `;
-
+            <a href="<?= site_url('user/Keranjang/checkout') ?>" class="btn w-100" style="background-color: #214836; color: white;">Checkout</a>`;
+        }
         document.getElementById('cartContent').innerHTML = cartContent;
     }
 

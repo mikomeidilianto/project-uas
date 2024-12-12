@@ -1,5 +1,67 @@
+<div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>Order</h6>
+            </div>
+            
+            <div class="card-body px-4 pt-0 pb-2">
+              <?php
+              // notif pesan berhasil ditambahkan
+              if (session()->getFlashdata('insert')){
+                echo '<div class="alert alert-success">';
+                echo session()->getFlashdata('insert');
+                echo '</div>';
+              }
 
-<p> 
-        <b>Isi konten Order</b> <br>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
+              if (session()->getFlashdata('update')){
+                echo '<div class="alert alert-light">';
+                echo session()->getFlashdata('update');
+                echo '</div>';
+              }
+              
+              if (session()->getFlashdata('delete')){
+                echo '<div class="alert alert-danger">';
+                echo session()->getFlashdata('delete');
+                echo '</div>';
+              }
+              ?>
+              <div class="table-responsive p-0">
+                  <table class="table justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nama</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">NIM</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Program Studi</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nomor telepon</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pesanan</th>
+                      
+                      
+                      
+                    </tr>
+                  </thead>
+                  <tbody> 
+                    <tr>
+                      <td><span class="text-xs font-weight-bold">1</span></td>
+                      <td><span class="text-xs font-weight-bold">Miko Meidilianto</span></td>
+                      <td><span class="text-xs font-weight-bold">2310512133</span></td>
+                      <td><span class="text-xs font-weight-bold">Fakultas Ilmu Komputer</span></td>
+                      <td><span class="text-xs font-weight-bold">081310944581</span></td>
+                      <td><span class="text-xs font-weight-bold badge badge-sm bg-gradient-success">Completed</span></td>
+                      <td>
+                      
+                        
+                        <a href="" class="btn btn-warning">Detail</a>
+                        
+                      
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

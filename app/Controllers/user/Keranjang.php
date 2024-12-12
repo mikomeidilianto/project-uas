@@ -87,4 +87,18 @@ class Keranjang extends BaseController
 
         return $this->response->setJSON(['success' => true, 'message' => 'Produk berhasil dihapus dari keranjang']);
     }
+    
+    public function checkout()
+    {
+        // Ambil data keranjang
+        $data = [
+            'page' => 'user/Pesanan/v_detailpesanan',
+            'cart' => $this->ModelKeranjang->getCartItems(),
+        ];
+        
+        
+        
+        return view('user/Pesanan/v_template_pesanan', $data);
+    }
+
 }

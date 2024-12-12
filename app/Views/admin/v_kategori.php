@@ -2,7 +2,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Kategori</h6>
+              <h6>Tenant</h6>
             </div>
             <div class="col-11 text-end">
               <a href="<?= base_url('admin/Kategori/Tambah') ?>" class="btn btn-primary btn-xm text-end mt-n5 me-n6">Tambah</a>

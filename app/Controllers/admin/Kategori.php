@@ -17,7 +17,7 @@ class Kategori extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Kategori',
+            'judul' => 'Tenant',
             'page' => 'admin/v_kategori',
             'menu' => 'kategori',
             'kategori' => $this->ModelKategori->AllData(),
@@ -29,7 +29,7 @@ class Kategori extends BaseController
     public function Tambah()
     {
         $data = [
-            'judul' => 'Tambah Kategori',
+            'judul' => 'Tambah Tenant',
             'page' => 'admin/v_tambahkategori',
             'menu' => 'kategori',
         ];
@@ -40,7 +40,7 @@ class Kategori extends BaseController
     {
         if ($this->validate([
             'name' => [
-                'label' => 'Nama Kategori',
+                'label' => 'Nama Tenant',
                 'rules' => 'required|is_unique[categories.name]',
                 'errors' => [
                     'required' => '{field} Wajib Diisi !!!',
@@ -89,7 +89,7 @@ class Kategori extends BaseController
     public function Edit($id)
     {
         $data = [
-            'judul' => 'Edit Kategori',
+            'judul' => 'Edit Tenant',
             'page' => 'admin/v_editkategori',
             'menu' => 'kategori',
             'detailkategori' => $this->ModelKategori->DetailData($id),

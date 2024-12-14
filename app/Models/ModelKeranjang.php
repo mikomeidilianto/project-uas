@@ -12,20 +12,25 @@ class ModelKeranjang extends Model
 
     
     public function AllData()
-    {
-        return $this->db->table('keranjang')
-            ->join('products', 'products.id = keranjang.id_product', 'left') // Join dengan tabel produk
-            ->select('products.*, keranjang.quantity, products.name AS keranjang_name, products.price AS keranjang_price, products.foto AS keranjang_foto') // Pilih kolom yang dibutuhkan
-            ->get()
-            ->getResultArray(); // Mengembalikan hasil dalam bentuk array
-    }
-    // Ambil semua item keranjang
-    public function getCartItems()
-    {
-        return $this->select('keranjang.*, products.name as product_name, products.price, products.foto')
-            ->join('products', 'products.id = keranjang.id_product')
-            ->findAll();
-    }
+{
+    return $this->db->table('keranjang')
+        ->join('products', 'products.id = keranjang.id_product', 'left') // Join dengan tabel produk
+        ->select('keranjang.quantity') // Kolom dari keranjang
+        ->select('products.id AS product_id, products.name AS keranjang_name, products.price AS keranjang_price, products.foto AS keranjang_foto, products.stock AS keranjang_stok') // Kolom dari produk
+        ->get()
+        ->getResultArray(); // Mengembalikan hasil dalam bentuk array
+}
+
+// Ambil semua item keranjang
+public function getCartItems()
+{
+    return $this->db->table('keranjang')
+        ->join('products', 'products.id = keranjang.id_product', 'left')
+        ->select('keranjang.id AS cart_id, keranjang.quantity') // Kolom dari keranjang
+        ->select('products.id AS product_id, products.name AS product_name, products.price, products.foto') // Kolom dari produk
+        ->get()
+        ->getResultArray(); // Mengembalikan hasil dalam bentuk array
+}
 
     // Tambahkan item ke keranjang
     public function addItem($id_product, $quantity)
@@ -57,5 +62,11 @@ class ModelKeranjang extends Model
     public function getItemById($id_product)
     {
         return $this->where('id_product', $id_product)->first();
+        
     }
+    public function clearCart()
+{
+    $this->db->table('keranjang')->truncate();
+}
+
 }

@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<script>
+<script>    
     // Muat isi keranjang saat sidebar dibuka
     addEventListener("DOMContentLoaded", (event) =>  {
         loadCart();

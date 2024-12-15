@@ -45,8 +45,13 @@
 </div>
 
 <script>    
-    // Muat isi keranjang saat sidebar dibuka
+    // Muat isi keranjang saat web diload
     addEventListener("DOMContentLoaded", (event) =>  {
+        loadCart();
+    });
+
+    // Muat isi keranjang saat sidebar dibuka
+    document.getElementById('cartSidebar').addEventListener('show.bs.offcanvas', function () {
         loadCart();
     });
 

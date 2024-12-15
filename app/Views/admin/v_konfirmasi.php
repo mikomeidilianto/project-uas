@@ -5,51 +5,91 @@
                 <h6>Konfirmasi Pesanan</h6>
             </div>
             <div class="card-body px-4 pt-0 pb-2">
-                <?php
-                // Notifikasi pesan berhasil/tidak
-                if (session()->getFlashdata('insert')) {
-                    echo '<div class="alert alert-success">' . session()->getFlashdata('insert') . '</div>';
-                }
-                if (session()->getFlashdata('delete')) {
-                    echo '<div class="alert alert-danger">' . session()->getFlashdata('delete') . '</div>';
-                }
-                ?>
+                <!-- Notifikasi Pesan Berhasil/Tidak -->
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php elseif (session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Tabel Konfirmasi Pesanan -->
                 <div class="table-responsive p-0">
-                    <table class="table justify-content-center mb-0">
+                    <table class="table table-hover align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">NIM</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nomor Telepon</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pesanan</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Total Harga</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Konfirmasi</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIM</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Telepon</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pesanan</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total Harga</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php if (!empty($orders)) : ?>
-                                <?php foreach ($orders as $order) : ?>
+                                <?php foreach ($orders as $item): ?>
                                     <tr>
-                                        <td><span class="text-xs font-weight-bold"><?= $order['order_id'] ?></span></td>
-                                        <td><span class="text-xs font-weight-bold"><?= $order['user_nama'] ?></span></td>
-                                        <td><span class="text-xs font-weight-bold"><?= $order['user_nim'] ?></span></td>
-                                        <td><span class="text-xs font-weight-bold"><?= $order['user_telepon'] ?></span></td>
-                                              <td>
-          <a href="<?= base_url('admin/konfirmasi/detail/' . $order['order_id']) ?>" class="btn btn-info btn-sm">Lihat Pesanan</a>
-      </td>
-                                        <td><span class="text-xs font-weight-bold">Rp<?= number_format($order['total_price'], 0, ',', '.') ?></span></td>
-                                        <td><span class="badge bg-gradient-secondary"><?= ucfirst($order['status']) ?></span></td>
+                                        <!-- ID Pesanan -->
                                         <td>
-    <a href="<?= base_url('admin/konfirmasi/confirm/' . $order['order_id']) ?>" class="btn btn-success">Terima</a>
-    <a href="<?= base_url('admin/konfirmasi/reject/' . $order['order_id']) ?>" class="btn btn-danger">Tolak</a>
-</td>
+                                            <span class="text-xs font-weight-bold"><?= esc($item['id_order']) ?></span>
+                                        </td>
+                                        <!-- Nama Pemesan -->
+                                        <td>
+                                            <span class="text-xs font-weight-bold"><?= esc($item['user_nama']) ?></span>
+                                        </td>
+                                        <!-- NIM -->
+                                        <td>
+                                            <span class="text-xs font-weight-bold"><?= esc($item['nim']) ?></span>
+                                        </td>
+                                        <!-- Nomor Telepon -->
+                                        <td>
+                                            <span class="text-xs font-weight-bold"><?= esc($item['telepon']) ?></span>
+                                        </td>
+                                        <!-- Lihat Pesanan -->
+                                        <td>
+                                            <a href="<?= base_url('admin/konfirmasi/detail/' . $item['id_order']) ?>" 
+                                               class="btn btn-info btn-sm" title="Lihat detail pesanan">
+                                                <i class="fas fa-eye"></i> Lihat Pesanan
+                                            </a>
+                                        </td>
+                                        <!-- Total Harga -->
+                                        <td>
+                                            <span class="text-xs font-weight-bold text-primary">
+                                                Rp<?= number_format($item['total_price'], 0, ',', '.') ?>
+                                            </span>
+                                        </td>
+                                        <!-- Status Pesanan -->
+                                        <td>
+                                            <span class="badge 
+                                                <?= $item['status'] == 'pending' ? 'bg-gradient-secondary' : 
+                                                    ($item['status'] == 'completed' ? 'bg-gradient-success' : 'bg-gradient-danger') ?>">
+                                                <?= ucfirst(esc($item['status'])) ?>
+                                            </span>
+                                        </td>
+                                        <!-- Tombol Aksi -->
+                                        <td>
+                                            <a href="<?= base_url('admin/konfirmasi/confirmOrder/' . $item['id_order']) ?>" 
+                                               class="btn btn-success btn-sm" title="Terima pesanan">
+                                                <i class="fas fa-check"></i> Terima
+                                            </a>
+                                            <a href="<?= base_url('admin/konfirmasi/cancelOrder/' . $item['id_order']) ?>" 
+                                               class="btn btn-danger btn-sm" title="Tolak pesanan">
+                                                <i class="fas fa-times"></i> Tolak
+                                            </a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else : ?>
                                 <tr>
-                                    <td colspan="8" class="text-center">Tidak ada pesanan untuk dikonfirmasi.</td>
+                                    <td colspan="8" class="text-center text-muted">
+                                        Tidak ada pesanan untuk dikonfirmasi.
+                                    </td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>

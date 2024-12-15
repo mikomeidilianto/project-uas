@@ -3,7 +3,7 @@
     session();
     $validation = \Config\Services::validation();
     ?>
-    <?php echo form_open_multipart('user/Keranjang/prosesCheckout')?>
+    <?php echo form_open_multipart('user/Orders/insertOrder')?>
     <h1 style="margin-bottom: 1.5rem; color:#214836; font-family: poppins, sans-serif; ">Pesanan</h1>
 
     <!-- Container with two columns -->
@@ -89,24 +89,6 @@
         <button type="submit" style="background-color: #214836; color: #fff; border: none; padding: 0.8rem 1.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 1rem;">Konfirmasi Pesanan</button>
     </div>
     <?php echo form_close() ?>
-</div>
-
-Modal Popup
-<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="orderModalLabel">Pesanan Anda</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="orderDetails">
-                <!-- Detail pesanan akan dimuat melalui AJAX -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
 </div>
 
 

@@ -3,38 +3,25 @@
 namespace App\Controllers\admin;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\ModelOrder;
 
 class Order extends BaseController
 {
+    protected $ModelOrder;
+
+    public function __construct()
+    {
+        $this->ModelOrder = new ModelOrder();
+    }
+
     public function index()
     {
         $data = [
             'judul' => 'Order',
             'page' => 'admin/v_order',
             'menu' => 'order',
+            'orders' => $this->ModelOrder->getCompletedOrders(), // Ambil pesanan yang dikonfirmasi
         ];
-         return view('admin/v_template', $data);
+        return view('admin/v_template', $data);
     }
-
-    public function orderDetails($orderId)
-{
-    // Ambil data pesanan berdasarkan ID
-    $order = $this->ModelOrder->getOrderById($orderId);
-
-    // Ambil item-item dari pesanan tersebut
-    $items = $this->ModelKeranjang->getItemsByOrder($orderId);
-
-    // Kirim data ke view
-    return view('admin/v_order_details', [
-        'order' => $order,
-        'items' => $items,
-    ]);
 }
-public function detail($orderId)
-{
-    $data['order'] = $this->ModelOrder->getOrderWithInvoice($orderId);
-    return view('admin/v_order_detail', $data);
-}
-}
-

@@ -26,7 +26,7 @@ public function getCartItems()
 {
     return $this->db->table('keranjang')
         ->join('products', 'products.id = keranjang.id_product', 'left')
-        ->select('keranjang.id AS cart_id, keranjang.quantity') // Kolom dari keranjang
+        ->select('keranjang.id AS cart_id, keranjang.quantity, keranjang.id_product') // Kolom dari keranjang
         ->select('products.id AS product_id, products.name AS product_name, products.price, products.foto') // Kolom dari produk
         ->get()
         ->getResultArray(); // Mengembalikan hasil dalam bentuk array

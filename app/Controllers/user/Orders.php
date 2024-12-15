@@ -48,6 +48,7 @@ class Orders extends BaseController
         // Simpan user jika belum ada
         $userModel = new ModelUser();
         $existingUser = $userModel->where('nim', $data['nim'])->first();
+        $existingUser = $userModel->where('nama', $data['nama'])->first();
 
         if (!$existingUser) {
             $userId = $userModel->insert([

@@ -5,20 +5,9 @@
                 <h6>Konfirmasi Pesanan</h6>
             </div>
             <div class="card-body px-4 pt-0 pb-2">
-                <!-- Notifikasi Pesan Berhasil/Tidak -->
-                <?php if (session()->getFlashdata('success')): ?>
-                    <div class="alert alert-success">
-                        <?= session()->getFlashdata('success') ?>
-                    </div>
-                <?php elseif (session()->getFlashdata('error')): ?>
-                    <div class="alert alert-danger">
-                        <?= session()->getFlashdata('error') ?>
-                    </div>
-                <?php endif; ?>
-
                 <!-- Tabel Konfirmasi Pesanan -->
                 <div class="table-responsive p-0">
-                    <table class="table table-hover align-items-center mb-0">
+                    <table class="table align-items-center mb-0">
                         <thead>
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
@@ -60,19 +49,19 @@
                                         </td>
                                         <!-- Total Harga -->
                                         <td>
-                                            <span class="text-xs font-weight-bold text-primary">
+                                            <span class="text-xs font-weight-bold">
                                                 Rp<?= number_format($item['total_price'], 0, ',', '.') ?>
                                             </span>
                                         </td>
                                         <!-- Status Pesanan -->
                                         <td>
-                                            <span class="badge 
+                                            <span class="badge mb-2 
                                                 <?= $item['status'] == 'pending' ? 'bg-gradient-secondary' : 
                                                     ($item['status'] == 'completed' ? 'bg-gradient-success' : 'bg-gradient-danger') ?>">
                                                 <?= ucfirst(esc($item['status'])) ?>
                                             </span>
                                         </td>
-                                        <!-- Tombol Aksi -->
+                                        <!--  Aksi -->
                                         <td>
                                             <a href="<?= base_url('admin/konfirmasi/confirmOrder/' . $item['id_order']) ?>" 
                                                class="btn btn-success btn-sm" title="Terima pesanan">

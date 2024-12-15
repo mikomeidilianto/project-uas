@@ -89,12 +89,14 @@ public function getKeranjang()
         ->join('users', 'users.id = orders.user_id', 'left')
         ->join('keranjang', 'keranjang.id = orders.id_keranjang', 'left')
         ->join('products', 'products.id = keranjang.id_product', 'left')
-        ->select('orders.id_order, orders.status, users.nama AS user_nama, users.nim, users.telepon')
-        ->select('products.name AS product_name, products.price, keranjang.quantity')
+        ->select('orders.id_order, orders.status')
+        ->select('users.nama, users.nim, users.telepon, users.fakultas')
+        ->select('products.name AS product_name, products.price AS product_price, keranjang.quantity')
         ->where('orders.id_order', $id_order)
         ->get()
-        ->getResultArray();
+        ->getResultArray(); // Gunakan getResultArray() untuk banyak data
 }
+
 
 public function getInvoice($id_order)
 {
@@ -102,6 +104,17 @@ public function getInvoice($id_order)
         ->join('products', 'products.id = invoice.product_id', 'left')
         ->select('products.name AS product_name, products.price, invoice.quantity')
         ->where('invoice.order_id', $id_order)
+        ->get()
+        ->getResultArray();
+}
+
+public function getInvoiceDetail($id_order)
+{
+    return $this->db->table('invoices')
+        ->join('orders', 'orders.id_order = invoices.order_id')
+        ->join('products', 'products.id = invoices.product_id')
+        ->select('orders.id_order, products.name AS product_name, invoices.quantity, invoices.total_price')
+        ->where('orders.id_order', $id_order)
         ->get()
         ->getResultArray();
 }

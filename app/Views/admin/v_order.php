@@ -15,6 +15,7 @@
                                     <th>NIM</th>
                                     <th>Telepon</th>
                                     <th>Status</th>
+                                    <th>Pesanan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,6 +26,10 @@
                                         <td><?= esc($item['nim']) ?></td>
                                         <td><?= esc($item['telepon']) ?></td>
                                         <td><span class="badge bg-gradient-success"><?= ucfirst($item['status']) ?></span></td>
+                                        <td>
+                                          <a href="<?= base_url('admin/order/detail/' . $item['id_order']) ?>" 
+                                            class="btn btn-info btn-sm">Lihat Detail</a>
+                                      </td> 
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

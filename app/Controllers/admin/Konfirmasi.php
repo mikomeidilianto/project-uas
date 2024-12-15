@@ -46,4 +46,24 @@ class Konfirmasi extends BaseController
         ];
         return view('admin/v_template', $data);
     }
+
+    public function detail($id_order)
+{
+    $orderDetail = $this->ModelOrder->getOrderDetail($id_order);
+
+    if (empty($orderDetail)) {
+        return redirect()->to('/admin/konfirmasi')->with('error', 'Detail pesanan tidak ditemukan.');
+    }
+
+    $data = [
+        'judul' => 'Detail Pesanan',
+        'page' => 'admin/v_order_detail',
+        'menu' => 'konfirmasi',
+        'orderDetail' => $orderDetail,
+    ];
+
+    return view('admin/v_template', $data);
 }
+
+}
+

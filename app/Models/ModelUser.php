@@ -23,7 +23,7 @@ class ModelUser extends Model
     }
 
     public function getUserById($id)
-{
-    return $this->where('id', $id)->first();
-}
+    {
+        return $this->where('id', $id)->first();
+    }
 }

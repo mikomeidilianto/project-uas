@@ -1,81 +1,74 @@
-<div class="container mt-5">
-    <h1 class="mb-4">Detail Pesanan</h1>
+<!-- Tombol Kembali ke Konfirmasi -->
+<div class="container mt-3">
+    <a href="<?= base_url('admin/konfirmasi') ?>" class="btn btn-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Kembali ke Konfirmasi
+    </a>
+</div>
 
-    <!-- Detail Pesanan -->
-    <div class="card mb-4">
+<div class="container mt-4">
+    <!-- Informasi Pemesan -->
+    <div class="card shadow-sm mb-4 border-0">
         <div class="card-header bg-primary text-white">
-            Informasi Pesanan
+            <h5 class="mb-0">Informasi Pemesan</h5>
         </div>
         <div class="card-body">
-            <p><strong>ID Pesanan:</strong> <?= $orderDetail[0]['id_order'] ?></p>
-            <p><strong>Status:</strong> <?= ucfirst($orderDetail[0]['status']) ?></p>
-            <p><strong>Nama:</strong> <?= $orderDetail[0]['user_nama'] ?></p>
-            <p><strong>NIM:</strong> <?= $orderDetail[0]['nim'] ?></p>
-            <p><strong>Telepon:</strong> <?= $orderDetail[0]['telepon'] ?></p>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <strong>ID Pesanan</strong>: <?= $orderDetail[0]['id_order'] ?>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <strong>Nama</strong>: <?= $orderDetail[0]['nama'] ?>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <strong>NIM</strong>: <?= $orderDetail[0]['nim'] ?>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <strong>Telepon</strong>: <?= $orderDetail[0]['telepon'] ?>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <strong>Fakultas</strong>: <?= $orderDetail[0]['fakultas'] ?>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Daftar Produk Pesanan -->
-    <h3>Detail Produk</h3>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Nama Produk</th>
-                <th>Harga Satuan</th>
-                <th>Jumlah</th>
-                <th>Total Harga</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            $totalHarga = 0;
-            foreach ($orderDetail as $item) {
-                $itemTotal = $item['price'] * $item['quantity'];
-                $totalHarga += $itemTotal;
-            ?>
-            <tr>
-                <td><?= $item['product_name'] ?></td>
-                <td>Rp<?= number_format($item['price'], 2, ',', '.') ?></td>
-                <td><?= $item['quantity'] ?></td>
-                <td>Rp<?= number_format($itemTotal, 2, ',', '.') ?></td>
-            </tr>
-            <?php } ?>
-            <tr>
-                <td colspan="3" class="text-end fw-bold">Total</td>
-                <td class="fw-bold">Rp<?= number_format($totalHarga, 2, ',', '.') ?></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- Invoice -->
-    <h3 class="mt-5">Invoice</h3>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Nama Produk</th>
-                <th>Harga Satuan</th>
-                <th>Jumlah</th>
-                <th>Total Harga</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            $totalInvoice = 0;
-            foreach ($invoiceDetail as $invoice) {
-                $invoiceTotal = $invoice['price'] * $invoice['quantity'];
-                $totalInvoice += $invoiceTotal;
-            ?>
-            <tr>
-                <td><?= $invoice['product_name'] ?></td>
-                <td>Rp<?= number_format($invoice['price'], 2, ',', '.') ?></td>
-                <td><?= $invoice['quantity'] ?></td>
-                <td>Rp<?= number_format($invoiceTotal, 2, ',', '.') ?></td>
-            </tr>
-            <?php } ?>
-            <tr>
-                <td colspan="3" class="text-end fw-bold">Total Invoice</td>
-                <td class="fw-bold">Rp<?= number_format($totalInvoice, 2, ',', '.') ?></td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Detail Barang -->
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Detail Barang</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover text-center align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nama Barang</th>
+                        <th>Harga</th>
+                        <th>Jumlah</th>
+                        <th>Total Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $totalHarga = 0;
+                        foreach ($orderDetail as $item) : 
+                            $subtotal = $item['product_price'] * $item['quantity'];
+                            $totalHarga += $subtotal;
+                    ?>
+                    <tr>
+                        <td class="fw-bold"><?= $item['product_name'] ?></td>
+                        <td>Rp<?= number_format($item['product_price'], 0, ',', '.') ?></td>
+                        <td><?= $item['quantity'] ?></td>
+                        <td class="fw-bold text-success">Rp<?= number_format($subtotal, 0, ',', '.') ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+                <tfoot>
+                    <tr class="table-info">
+                        <th colspan="3" class="text-end fw-bold">Total Harga</th>
+                        <th class="text-success fs-5">Rp<?= number_format($totalHarga, 0, ',', '.') ?></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
 </div>

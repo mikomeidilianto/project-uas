@@ -32,7 +32,7 @@ class Kategori extends BaseController
             'judul' => 'Tambah Tenant',
             'page' => 'admin/v_tambahkategori',
             'menu' => 'kategori',
-        ];
+        ]; 
          return view('admin/v_template', $data);
     }
 

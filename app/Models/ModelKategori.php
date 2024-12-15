@@ -13,6 +13,15 @@ class ModelKategori extends Model
                 ->Get()-> GetResultArray();
     }
 
+    public function GetData()
+    {
+        // Melakukan join antara tabel 'products' dan 'categories' berdasarkan category_id
+        return $this->db->table('categories')
+        ->limit(6) // Membatasi hasil hanya 6 data
+        ->get()
+        ->getResultArray();
+    }
+
     //Tambah data
     public function InsertData($data)
     {

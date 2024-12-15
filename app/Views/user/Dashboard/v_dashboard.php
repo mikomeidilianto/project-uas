@@ -90,7 +90,7 @@
                     $price = number_format($value['price'], 2, ',', '.');
                 ?>
                     <div class="col-lg-2 col-md-6 mb-4">
-                        <a href="" class="text-decoration-none">
+                        <a href="/Menu" class="text-decoration-none">
                             <div class="card custom-card h-100">
                                 <!-- Gambar menu -->
                                 <img src="<?= base_url('Admin/assets/img/' . $value['foto']) ?>" class="card-img-top" width="100vh" height="200vh" alt="<?= $value['name']; ?>">

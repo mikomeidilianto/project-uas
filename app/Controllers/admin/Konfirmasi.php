@@ -4,6 +4,8 @@ namespace App\Controllers\admin;
 
 use App\Controllers\BaseController;
 use App\Models\ModelOrder;
+use App\Models\ModelProduk;
+use App\Models\ModelKategori;
 
 class Konfirmasi extends BaseController
 {

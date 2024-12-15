@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2024 at 12:22 PM
+-- Generation Time: Dec 15, 2024 at 04:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.3.13
 
@@ -61,6 +61,13 @@ CREATE TABLE `invoice` (
   `quantity` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `order_id`, `product_id`, `quantity`) VALUES
+(31, 68, 8, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -72,14 +79,6 @@ CREATE TABLE `keranjang` (
   `id_product` int(11) NOT NULL,
   `quantity` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `keranjang`
---
-
-INSERT INTO `keranjang` (`id`, `id_product`, `quantity`) VALUES
-(15, 15, 1),
-(16, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -100,7 +99,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id_order`, `user_id`, `id_keranjang`, `status`, `created_at`) VALUES
-(52, 37, 15, 'pending', '2024-12-15 11:21:40');
+(68, 44, 25, 'completed', '2024-12-15 15:16:29');
 
 -- --------------------------------------------------------
 
@@ -141,7 +140,15 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `category
 (21, 'Churros Chocolatte (isi 6)', 'Churros', 20000, 50, 5, '1734002409_6f02f932f779c91e73e8.jpg', 'active'),
 (22, 'Mie Nyemek', 'Mie goreng', 15000, 20, 6, '1734002447_9c02496c65c05177b4fc.jpg', 'active'),
 (23, 'Mie Tek Tek Goreng', 'Mie goreng', 18000, 70, 6, '1734002481_150b73c329bbf34ca93f.jpg', 'active'),
-(24, 'Mie Tek Tek Kuah', 'Mie goreng', 18000, 40, 6, '1734002520_f3c670c0f08de34a7f68.jpg', 'active');
+(24, 'Mie Tek Tek Kuah', 'Mie goreng', 18000, 40, 6, '1734002520_f3c670c0f08de34a7f68.jpg', 'active'),
+(25, 'Thaiwet', 'Thai tea Dawet', 15000, 50, 7, '1734276612_906b78d4b2176922da47.png', 'active'),
+(26, 'Milowet', 'Milo Dawet', 18000, 50, 7, '1734276656_a74743dd505ca0350243.png', 'active'),
+(27, 'Oriwet', 'Cendol Dawet Original', 15000, 50, 7, '1734276699_95c2f0cd643eeadffd89.png', 'active'),
+(28, 'Tarowet', 'Taro Dawet', 18000, 50, 7, '1734276733_cee5800093f15c0ac0f1.png', 'active'),
+(29, 'Bawang Goreng', 'Bawang', 10000, 0, 8, '1734276785_48a6a26d80f724748f54.png', 'inactive'),
+(30, 'Spicy Wonton', 'Spicy Wonton', 25000, 20, 8, '1734276820_eb26b5b6f027d3cfefac.png', 'active'),
+(31, 'Risol Mayo (isi 3)', 'Risol Mayonaise', 10000, 30, 8, '1734276860_993b83b1372584950cdd.png', 'active'),
+(32, 'Tahu Bakso (isi 3)', 'Tahu Baso gurih', 10000, 50, 4, '1734277028_d93ba4a2e036e69ed869.png', 'active');
 
 -- --------------------------------------------------------
 
@@ -182,7 +189,10 @@ INSERT INTO `users` (`id`, `nama`, `nim`, `fakultas`, `telepon`, `password`, `ro
 (34, 'pokoko', '86786776', 'FIKES', '56365245', '', 'customer', '2024-12-15 10:49:52'),
 (35, 'poerqwr', '3518593', 'FEB', '13414134', '', 'customer', '2024-12-15 10:54:12'),
 (36, 'Alip Van Raul Vazquez Del Mato', '2310512173', 'FIK', '0869696969', '', 'customer', '2024-12-15 11:12:25'),
-(37, 'rgrgg', '12414', 'FT', '31414', '', 'customer', '2024-12-15 11:21:40');
+(37, 'rgrgg', '12414', 'FT', '31414', '', 'customer', '2024-12-15 11:21:40'),
+(38, 'Raul Vazquez', '14141245', 'FEB', '141413536', '', 'customer', '2024-12-15 11:25:56'),
+(43, 'wewsdaf', '41531138', 'FIKES', '214141415', '', 'customer', '2024-12-15 12:12:07'),
+(44, 'Ezequil Ramdhan', '2410512145', 'FIK', '0813495245', '', 'customer', '2024-12-15 15:16:29');
 
 --
 -- Indexes for dumped tables
@@ -246,31 +256,31 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables

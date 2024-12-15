@@ -4,14 +4,17 @@ namespace App\Controllers\admin;
 
 use App\Controllers\BaseController;
 use App\Models\ModelOrder;
+use App\Models\ModelInvoice;
 
 class Order extends BaseController
 {
     protected $ModelOrder;
+    protected $ModelInvoice;
 
     public function __construct()
     {
         $this->ModelOrder = new ModelOrder();
+        $this->ModelInvoice = new ModelInvoice();
     }
 
     public function index()
@@ -26,16 +29,14 @@ class Order extends BaseController
     }
     public function detail($id_order)
 {
-    $invoiceDetail = $this->ModelOrder->getInvoiceDetail($id_order);
-
     if (empty($invoiceDetail)) {
-        return redirect()->to('/admin/order')->with('error', 'Invoice tidak ditemukan.');
+        return redirect()->to('admin/order')->with('error', 'Invoice tidak ditemukan.');
     }
 
     $data = [
-        'page' => 'admin/v_order_detail',
+        'page' => 'admin/v_order_completed',
         'menu' => 'order',
-        'invoiceDetail' => $invoiceDetail
+        'invoiceDetail' => $this->ModelOrder->getInvoiceDetail($id_order),
     ];
 
     return view('admin/v_template', $data);

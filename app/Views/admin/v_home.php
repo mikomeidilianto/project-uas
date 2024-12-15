@@ -156,22 +156,40 @@
 <body>
     <!-- Kategori Makanan (Dropdown) -->
     <div class="category-section">
-        <h4 class="dropdown-toggle" onclick="toggleMenu('makanan')">Product</h4>
-        <div id="makanan" class="menu-section">
+        <h4 class="dropdown-toggle" onclick="toggleMenu('product')">Product</h4>
+        <div id="product" class="menu-section">
             <div class="menu-item">
-                <img src="<?= base_url('Admin') ?>/assets/img/sate kalajengking.jpg" alt="Sate Kalajengking">
                 <div class="menu-info">
-                    <h5>Sate Kalajengking</h5>
-                    <p>Sate Kalajengking enak, sehat, dan bergizi.</p>
-                    <p><b>Rp10.000</b></p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="<?= base_url('Admin') ?>/assets/img/nasi goreng.jpg" alt="Nasi Goreng Spesial">
-                <div class="menu-info">
-                    <h5>Nasi Goreng Spesial</h5>
-                    <p>Nasi goreng dengan topping sosis, telur, dan sayuran.</p>
-                    <p><b>Rp20.000</b></p>
+                <table class="table justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nama</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Deskripsi</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Foto</th>      
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 link-underline-primary"><a href="<?= base_url('admin/Product') ?>">View All</a></th>      
+                    </tr>
+                  </thead>
+                  <tbody> 
+                    <?php $no = 1; 
+                    foreach ($produk as $key => $value) { ?>
+                    <tr>
+                      <td>
+                        <span class="text-xs font-weight-bold text-center"><?= $no++ ?></span>
+                    </td>
+                      <td>
+                      <span class="text-xs font-weight-bold"><?= $value['name'] ?></span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold"><?= $value['description'] ?></span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold"><img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" ></span>
+                      </td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
                 </div>
             </div>
         </div>
@@ -179,53 +197,43 @@
 
     <!-- Kategori Minuman (Dropdown) -->
     <div class="category-section">
-        <h4 class="dropdown-toggle" onclick="toggleMenu('minuman')">Tenant</h4>
-        <div id="minuman" class="menu-section">
+        <h4 class="dropdown-toggle" onclick="toggleMenu('tenant')">Tenant</h4>
+        <div id="tenant" class="menu-section">
             <div class="menu-item">
-                <img src="<?= base_url('Admin') ?>/assets/img/kopi susu.jpg" alt="Kopi Susu">
-                <div class="menu-info">
-                    <h5>Kopi Susu</h5>
-                    <p>Kopi susu dingin ukuran sedang.</p>
-                    <p><b>Rp15.000</b></p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="<?= base_url('Admin') ?>/assets/img/es teh manis.jpg" alt="Teh Manis Dingin">
-                <div class="menu-info">
-                    <h5>Teh Manis Dingin</h5>
-                    <p>Teh manis segar dengan es batu.</p>
-                    <p><b>Rp8.000</b></p>
-                </div>
-            </div>
+            <table class="table justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">id</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nama</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Deskripsi</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Foto</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 link-underline-primary"><a href="<?= base_url('admin/Kategori') ?>">View All</a></th>       
+                    </tr>
+                  </thead>
+                  <tbody> 
+                    <?php $no = 1; 
+                    foreach ($kategori as $key => $value) { ?>
+                    <tr>
+                      <td>
+                        <span class="text-xs font-weight-bold text-center"><?= $no++ ?></span>
+                    </td>
+                      <td>
+                      <span class="text-xs font-weight-bold"><?= $value['name'] ?></span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold"><?= $value['description'] ?></span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold"><img src="<?= base_url('Admin/assets/img/'. $value['foto']) ?>" ></span>
+                      </td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
         </div>
     </div>
 
-    <!-- Status Orderan -->
-    <div class="order-status">
-        <p>Status Orderan:</p>
-        <!-- <div class="order-item-container">
-            <div class="order-item">
-                <img src="<?= base_url('Admin') ?>/assets/img/es teh manis.jpg" alt="Teh Manis Dingin">
-                <div class="menu-info">
-                    <h5>Teh Manis Dingin</h5>
-                    <p>Teh manis segar dengan es batu.</p>
-                    <p><b>Rp8.000</b></p>
-                </div>
-            </div>
-            <button class="status-button" id="statusButton" onclick="changeStatus()">Konfirmasi Pesanan</button>
-        </div>
-        <div class="order-item-container">
-            <div class="order-item">
-                <img src="<?= base_url('Admin') ?>/assets/img/sate kalajengking.jpg" alt="Sate Kalajengking">
-                <div class="menu-info">
-                    <h5>Sate Kalajengking</h5>
-                    <p>Sate Kalajengking enak, sehat, dan bergizi.</p>
-                    <p><b>Rp10.000</b></p>
-                </div>
-            </div>
-            <button class="status-button" id="statusButton2" onclick="changeStatus()">Konfirmasi Pesanan</button>
-        </div>
-    </div> -->
+   
 
     <script>
         // Toggle visibility of the menu (makanan or minuman)
@@ -234,8 +242,8 @@
             var isActive = menu.style.display === 'block';
 
             // Close all menus
-            document.getElementById('makanan').style.display = 'none';
-            document.getElementById('minuman').style.display = 'none';
+            document.getElementById('product').style.display = 'none';
+            document.getElementById('tenant').style.display = 'none';
 
             // If the clicked menu was not active, open it
             if (!isActive) {
@@ -243,13 +251,6 @@
             }
         }
 
-        function changeStatus() {
-            var statusButton = event.target; // Get the button that was clicked
-
-            // Mengubah teks tombol menjadi "Diproses"
-            statusButton.innerHTML = "Diproses";
-            statusButton.disabled = true; // Menonaktifkan tombol setelah diklik
-        }
     </script>
 </body>
 

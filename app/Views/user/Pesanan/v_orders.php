@@ -8,16 +8,24 @@
             <thead style="background-color: #214836; color: white; ">
                 <tr>
                     <th style="font-weight: normal;">ID Pesanan</th>
+                    <th style="font-weight: normal;">Nama</th>
+                    <th style="font-weight: normal;">NIM</th>
+                    <th style="font-weight: normal;">Fakultas</th>
+                    <th style="font-weight: normal;">Telepon</th>
+                    <th style="font-weight: normal;">Lokasi</th>
                     <th style="font-weight: normal;">Status</th>
-                    <th style="font-weight: normal;">Detail</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($orders as $key => $value) { ?>
                     <tr>
                         <td><?= $value['id_order'] ?></td>
+                        <td><?= ucfirst($value['user_nama']) ?></td>
+                        <td><?= ucfirst($value['nim']) ?></td>
+                        <td><?= ucfirst($value['fakultas']) ?></td>
+                        <td><?= ucfirst($value['telepon']) ?></td>
+                        <td>Pickup Points</td>
                         <td><?= ucfirst($value['status']) ?></td>
-                        <td><a href="<?= base_url('user/order/detail/' . $value['id_order']) ?>" style="color: #214836; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Lihat Detail</a></td>
                     </tr>
                 <?php break;
                 } ?>

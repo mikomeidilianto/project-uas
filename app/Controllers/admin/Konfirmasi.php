@@ -34,7 +34,7 @@ class Konfirmasi extends BaseController
     public function cancelOrder($id_order)
     {
         $this->ModelOrder->cancelOrder($id_order);
-        return redirect()->to('admin/Konfirmasi')->with('success', 'Pesanan berhasil ditolak.');
+        return redirect()->to('admin/Konfirmasi')->with('danger', 'Pesanan berhasil ditolak.');
     }
 
     public function orders()

@@ -74,7 +74,16 @@ class Keranjang extends BaseController
         $item = $this->ModelKeranjang->getItemById($id_product);
 
         if ($item) {
-            $newQuantity = ($action === 'plus') ? $item['quantity'] + 1 : max(1, $item['quantity'] - 1);
+            $newQuantity = 0;
+            if ($action === 'plus') {
+                $newQuantity = $item['quantity'] + 1;
+            } else if ($action === 'minus') {
+                if ($item['quantity'] > 1) {
+                    $newQuantity = max(1, $item['quantity'] - 1);
+                } else {
+                    $this->ModelKeranjang->removeItem($id_product);
+                }
+            }
             $this->ModelKeranjang->updateQuantity($id_product, $newQuantity);
 
             return $this->response->setJSON(['success' => true]);

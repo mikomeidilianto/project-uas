@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2024 at 07:38 PM
+-- Generation Time: Dec 15, 2024 at 12:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.3.13
 
@@ -58,8 +58,7 @@ CREATE TABLE `invoice` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` decimal(10,2) NOT NULL
+  `quantity` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -79,9 +78,8 @@ CREATE TABLE `keranjang` (
 --
 
 INSERT INTO `keranjang` (`id`, `id_product`, `quantity`) VALUES
-(51, 8, 4),
-(52, 10, 2),
-(53, 12, 2);
+(15, 15, 1),
+(16, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -90,12 +88,19 @@ INSERT INTO `keranjang` (`id`, `id_product`, `quantity`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
+  `id_order` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `total_price` decimal(10,2) NOT NULL,
-  `status` enum('pending','processed','completed','cancelled') DEFAULT 'pending',
+  `id_keranjang` int(11) DEFAULT NULL,
+  `status` enum('pending','completed','cancelled') DEFAULT 'pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id_order`, `user_id`, `id_keranjang`, `status`, `created_at`) VALUES
+(52, 37, 15, 'pending', '2024-12-15 11:21:40');
 
 -- --------------------------------------------------------
 
@@ -119,14 +124,24 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `category_id`, `foto`, `status`) VALUES
-(4, 'Sate Kalajengking', 'Made in Thailand', 50000, 5, 1, '1733756092_a6567bccf1ef1362c84d.jpg', 'inactive'),
-(6, 'Croisant', 'roti croisant', 8000, 0, 4, '1733309702_24c7da8fb70646913af5.jpg', 'inactive'),
-(8, 'French Fries', 'kentang goreng enak tau', 20000, 100, 1, '1733309679_b6bc971dee964cde1260.png', 'active'),
-(10, 'wewewewewreret', 'fdfsf', 15000, 213, 1, '1733397024_812595c3fb2bc8a7c60e.jpg', 'active'),
-(11, 'Hiasan', 'Sedotan', 434434, 100, 5, '1733397109_79e8025c869d0e99b594.png', 'inactive'),
-(12, 'ayam geprek', 'sabana', 8000, 5, 1, '1733407000_42c64d94de9611711f97.jpg', 'active'),
-(13, 'valen', 'gatau', 50000, 23, 1, '1733470233_69f46ee9acf498e96d15.png', 'active'),
-(14, 'valen123', 'gatau', 50000, 23, 1, '1733685461_e0c6cf791c5ed0f01d42.png', 'active');
+(4, 'Americano', 'Coffee ', 19000, 50, 1, '1734001735_6569330e9e56f156ed37.jpg', 'active'),
+(6, 'Cappucino', 'Coffee ', 21000, 50, 1, '1734001776_39bcf09a48143795bd77.jpg', 'active'),
+(8, 'Coffee Latte', 'Coffee ', 21000, 50, 1, '1734001809_780b23c9bcac89c7edc5.jpg', 'active'),
+(10, 'Matcha Coffee', 'Coffee ', 23000, 50, 1, '1734001888_b0061337a2a9468ca407.jpg', 'active'),
+(11, 'Tropical Punch', 'Non Coffee', 24000, 50, 1, '1734001936_18a3aa1363b9b3241c48.jpg', 'active'),
+(12, 'Vietnam V60', 'Coffee ', 20000, 50, 1, '1734001976_55153766878ef67ecb9c.jpg', 'active'),
+(13, 'Curry Beef Ramen', 'Ramen noodles', 25000, 50, 2, '1734002030_10d0b8881dc3b9459380.jpg', 'active'),
+(14, 'Curry Chicken Ramen', 'Ramen noodles', 18000, 40, 2, '1734002075_c4b0928442a5af4d8859.jpg', 'active'),
+(15, 'Karage Ramen', 'Ramen noodles', 25000, 18, 2, '1734002111_5393d70ac0c43f5a1e15.jpg', 'active'),
+(16, 'Ramen Tantan', 'Ramen noodles', 18000, 0, 2, '1734002154_4ae30721b519ffaff209.png', 'inactive'),
+(17, 'Ayam Geprek Hemat', 'Ayam geprek', 15000, 100, 3, '1734002199_3b12e5b10aed344f4182.jpeg', 'active'),
+(18, 'Paket Geprek Lengkap', 'Ayam geprek', 20000, 50, 3, '1734002243_35b45ccb642888de8c7b.jpg', 'active'),
+(19, 'Paket Geprek Mozzarella', 'Ayam geprek', 23000, 0, 3, '1734002283_fb6337730f52621b7220.jpg', 'inactive'),
+(20, 'Churros Original (isi 6)', 'Churros', 15000, 30, 5, '1734002359_1ed07dbd94abdc4b9138.jpg', 'active'),
+(21, 'Churros Chocolatte (isi 6)', 'Churros', 20000, 50, 5, '1734002409_6f02f932f779c91e73e8.jpg', 'active'),
+(22, 'Mie Nyemek', 'Mie goreng', 15000, 20, 6, '1734002447_9c02496c65c05177b4fc.jpg', 'active'),
+(23, 'Mie Tek Tek Goreng', 'Mie goreng', 18000, 70, 6, '1734002481_150b73c329bbf34ca93f.jpg', 'active'),
+(24, 'Mie Tek Tek Kuah', 'Mie goreng', 18000, 40, 6, '1734002520_f3c670c0f08de34a7f68.jpg', 'active');
 
 -- --------------------------------------------------------
 
@@ -139,6 +154,7 @@ CREATE TABLE `users` (
   `nama` varchar(100) NOT NULL,
   `nim` varchar(100) DEFAULT NULL,
   `fakultas` varchar(100) DEFAULT NULL,
+  `telepon` varchar(100) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('admin','customer') DEFAULT 'customer',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -148,9 +164,25 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nama`, `nim`, `fakultas`, `password`, `role`, `created_at`) VALUES
-(1, 'admin', '', NULL, '12345', 'admin', '2024-11-30 13:00:28'),
-(2, 'Miko meidilianto', '2310512133', NULL, '', 'customer', '2024-12-01 07:18:11');
+INSERT INTO `users` (`id`, `nama`, `nim`, `fakultas`, `telepon`, `password`, `role`, `created_at`) VALUES
+(1, 'admin', '', NULL, '', '12345', 'admin', '2024-11-30 13:00:28'),
+(20, 'J. K. Rowlings', '2313593533', 'FK', '765747647', '', 'customer', '2024-12-14 19:37:05'),
+(21, 'J. K. Rodeegrg', '2313434', 'FT', '76453', '', 'customer', '2024-12-14 19:41:05'),
+(22, 'refonji', '2310515543', 'FIK', '08121395021', '', 'customer', '2024-12-14 19:46:32'),
+(23, 'jikroy', '4135235', 'FH', '3211324', '', 'customer', '2024-12-14 20:05:01'),
+(24, 'miko', '2310513', 'FIK', '08121395021', '', 'customer', '2024-12-15 04:14:14'),
+(25, 'budi', '9999999', 'FIKES', '7777777', '', 'customer', '2024-12-15 05:59:48'),
+(26, 'budiono siregar', '111111', 'FEB', '22222', '', 'customer', '2024-12-15 06:28:26'),
+(27, 'heru', '69696969', 'FEB', '725414314', '', 'customer', '2024-12-15 07:12:28'),
+(28, 'herubudiman', '696', 'FEB', '725414', '', 'customer', '2024-12-15 07:42:03'),
+(29, 'zzztentaciont', '41535135', 'FIKES', '123124535', '', 'customer', '2024-12-15 09:58:32'),
+(31, 'pookmkl', '535123', 'FK', '3211324', '', 'customer', '2024-12-15 10:31:31'),
+(32, 'popkoire', '241431535', 'FEB', '0841341345351', '', 'customer', '2024-12-15 10:35:54'),
+(33, 'wewrer', '2414315325', 'FIKES', '08413453454', '', 'customer', '2024-12-15 10:49:18'),
+(34, 'pokoko', '86786776', 'FIKES', '56365245', '', 'customer', '2024-12-15 10:49:52'),
+(35, 'poerqwr', '3518593', 'FEB', '13414134', '', 'customer', '2024-12-15 10:54:12'),
+(36, 'Alip Van Raul Vazquez Del Mato', '2310512173', 'FIK', '0869696969', '', 'customer', '2024-12-15 11:12:25'),
+(37, 'rgrgg', '12414', 'FT', '31414', '', 'customer', '2024-12-15 11:21:40');
 
 --
 -- Indexes for dumped tables
@@ -181,8 +213,9 @@ ALTER TABLE `keranjang`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`id_order`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `id_keranjang` (`id_keranjang`);
 
 --
 -- Indexes for table `products`
@@ -213,31 +246,31 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Constraints for dumped tables
@@ -247,14 +280,14 @@ ALTER TABLE `users`
 -- Constraints for table `invoice`
 --
 ALTER TABLE `invoice`
-  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
+  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id_order`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
 -- Constraints for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `keranjangproduct_fk1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orders`

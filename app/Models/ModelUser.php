@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class ModelUser extends Model
 {   
     protected $table = 'users';
+    protected $primaryKey = 'id';
     protected $allowedFields = ['nama', 'nim', 'fakultas', 'telepon'];
     //Tampil data
     public function AllData()

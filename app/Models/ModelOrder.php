@@ -36,15 +36,23 @@ public function getKeranjang()
 
     // Konfirmasi pesanan, pindahkan ke tabel invoice dan hapus keranjang
     public function confirmOrder($id_order)
-    {
-        // Ambil pesanan berdasarkan id_order
-        $order = $this->db->table('orders')->where('id_order', $id_order)->get()->getRow();
+{
+    // Ambil pesanan berdasarkan id_order
+    $order = $this->db->table('orders')->where('id_order', $id_order)->get()->getRow();
 
-        if ($order) {
-            // Ambil data keranjang
-            $keranjang = $this->db->table('keranjang')->where('id', $order->id_keranjang)->get()->getRow();
+    if ($order) {
+        // Ambil data keranjang
+        $keranjang = $this->db->table('keranjang')->where('id', $order->id_keranjang)->get()->getRow();
 
-            if ($keranjang) {
+        if ($keranjang) {
+            // Ambil stok produk saat ini
+            $product = $this->db->table('products')->where('id', $keranjang->id_product)->get()->getRow();
+
+            if ($product && $product->stock >= $keranjang->quantity) {
+                // Kurangi stok produk
+                $newStock = $product->stock - $keranjang->quantity;
+                $this->db->table('products')->where('id', $keranjang->id_product)->update(['stock' => $newStock]);
+
                 // Simpan ke tabel invoice
                 $invoiceData = [
                     'order_id' => $id_order,
@@ -55,13 +63,16 @@ public function getKeranjang()
 
                 // Hapus keranjang
                 $this->db->table('keranjang')->where('id', $order->id_keranjang)->delete();
+            } else {
+                return false; // Stok tidak mencukupi
             }
-
-            // Update status pesanan menjadi 'completed'
-            return $this->db->table('orders')->where('id_order', $id_order)->update(['status' => 'completed']);
         }
-        return false;
+
+        // Update status pesanan menjadi 'completed'
+        return $this->db->table('orders')->where('id_order', $id_order)->update(['status' => 'completed']);
     }
+    return false;
+}
 
     // Tolak pesanan
     public function cancelOrder($id_order)
@@ -94,7 +105,7 @@ public function getKeranjang()
         ->select('products.name AS product_name, products.price AS product_price, keranjang.quantity')
         ->where('orders.id_order', $id_order)
         ->get()
-        ->getResultArray(); // Gunakan getResultArray() untuk banyak data
+        ->getResultArray();
 }
 
 

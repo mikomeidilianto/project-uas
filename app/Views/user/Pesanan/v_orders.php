@@ -12,6 +12,7 @@
                     <th style="font-weight: normal;">NIM</th>
                     <th style="font-weight: normal;">Fakultas</th>
                     <th style="font-weight: normal;">Telepon</th>
+                    <th style="font-weight: normal;">Pembayaran</th>
                     <th style="font-weight: normal;">Lokasi</th>
                     <th style="font-weight: normal;">Status</th>
                 </tr>
@@ -24,6 +25,7 @@
                         <td><?= ucfirst($value['nim']) ?></td>
                         <td><?= ucfirst($value['fakultas']) ?></td>
                         <td><?= ucfirst($value['telepon']) ?></td>
+                        <td>Cash On Delivery</td>
                         <td>Pickup Points</td>
                         <td><?= ucfirst($value['status']) ?></td>
                     </tr>

@@ -19,6 +19,7 @@ class Order extends BaseController
 
     public function index()
     {
+        // Menampilkan data pesanan yang sudah dikonfirmasi
         $data = [
             'judul' => 'Order',
             'page' => 'admin/v_order',
@@ -29,6 +30,7 @@ class Order extends BaseController
     }
     public function detail($id_order)
 {
+    // Menampilkan detail pesanan
     if (empty($invoiceDetail)) {
         return redirect()->to('admin/order')->with('error', 'Invoice tidak ditemukan.');
     }

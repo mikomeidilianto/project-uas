@@ -18,6 +18,7 @@ class Keranjang extends BaseController
 
     public function __construct()
     {
+        // Mengambil data dari model
         $this->ModelKeranjang = new ModelKeranjang();
         $this->ModelProduk = new ModelProduk();
         $this->ModelOrder = new ModelOrder();
@@ -31,6 +32,7 @@ class Keranjang extends BaseController
 
         return view('user/v_navbar', $data); // Ganti dengan nama view yang sesuai
     }
+    
     // Method untuk mendapatkan isi keranjang
     public function getCart()
     {

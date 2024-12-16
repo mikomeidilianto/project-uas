@@ -14,12 +14,14 @@ class Orders extends BaseController
 
     public function __construct()
     {
+        // Mengambil data dari model
         $this->ModelOrder = new ModelOrder();
         $this->ModelKeranjang = new ModelKeranjang();
     }
 
     public function index()
     {
+        // Menampilkan data order user
         $data = [
             'page' => 'user/Pesanan/v_orders',
             'keranjang' => $this->ModelOrder->getKeranjang(),
@@ -31,6 +33,7 @@ class Orders extends BaseController
 
     public function insertOrder()
     {
+        // Method menambahkan produk ke order
         $validation = \Config\Services::validation();
         $data = $this->request->getPost();
 
@@ -80,6 +83,7 @@ class Orders extends BaseController
     }
     public function detail($id_order)
 {
+    // Mengambil data pada model dan menampilkannya
     $orderDetail = $this->ModelOrder->getOrderDetail($id_order);
     $invoiceDetail = $this->ModelOrder->getInvoice($id_order);
 

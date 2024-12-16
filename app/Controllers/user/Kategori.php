@@ -12,6 +12,7 @@ class Product extends BaseController
 {
     public function __construct()
     {
+        // Mengambil data dari model
         $this->ModelProduk = new ModelProduk();
         $this->ModelKategori = new ModelKategori();
         $this->ModelKeranjang = new ModelKeranjang();
@@ -19,6 +20,7 @@ class Product extends BaseController
 
     public function index()
     {
+        // Menampilkan tenant pada dashboard
         $data = [
             'page' => 'user/Dashboard/v_dashboard',
             'Kategori' => $this->ModelKategori->AllData(),

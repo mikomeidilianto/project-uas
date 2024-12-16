@@ -29,6 +29,9 @@
                     <strong>Fakultas</strong>: <?= $orderDetail[0]['fakultas'] ?>
                 </div>
                 <div class="col-md-6 mb-2">
+                <strong>Pembayaran</strong> Cash On Delivery
+                </div>
+                <div class="col-md-6 mb-2">
                     <strong>Lokasi</strong> Pickup Points
                 </div>
             </div>

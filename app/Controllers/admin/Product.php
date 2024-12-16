@@ -11,11 +11,13 @@ class Product extends BaseController
 {
     public function __construct()
     {
+        // Mengambil data dari model
         $this->ModelProduk = new ModelProduk();
     }
 
     public function index()
     {
+        // Menampilkan data produk
         $data = [
             'judul' => 'Produk',
             'page' => 'admin/v_product',
@@ -26,6 +28,7 @@ class Product extends BaseController
     }
 
     //CRUD : CREATE
+    // Menampilkan form tambah produk 
     public function Tambah()
     {
         $data = [
@@ -34,9 +37,10 @@ class Product extends BaseController
             'menu' => 'product',
             'kategori' => $this->ModelProduk->AllKategori(),
         ];
-         return view('admin/v_template', $data);
+        return view('admin/v_template', $data);
     }
-
+    
+    // Menambahkan produk
     public function InsertData()
     {
         if ($this->validate([
@@ -122,6 +126,7 @@ class Product extends BaseController
         }
     }
 
+    // Menampilkan form edit product
     public function Edit($id)
     {
         $data = [
@@ -133,7 +138,7 @@ class Product extends BaseController
         ];
          return view('admin/v_template', $data);
     }
-
+    // Fungsi update produk
     public function UpdateData($id)
     {
         if ($this->validate([
@@ -221,6 +226,7 @@ class Product extends BaseController
         }
     }
 
+    // Fungsi delete produk
     public function Delete($id)
     {
         $detailproduk = $this->ModelProduk->DetailData($id);

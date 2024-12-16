@@ -39,6 +39,7 @@
 
         <div class="list-group" id="list-tab" role="tablist" style="font-weight: 500;">
             <?php
+                // Menampilkan kategori menu 
             foreach ($kategorimenu as $key => $value) {
                 // Variabel ID dan href untuk Bootstrap Tab
                 $id = strtolower(str_replace(' ', '_', $value['name'])); // Mengubah nama menjadi slug
@@ -57,6 +58,7 @@
             <?php foreach ($kategorimenu as $key => $value) { ?>
                 <div class="tab-pane fade <?= $key === 0 ? 'show active' : '' ?>" id="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>" role="tabpanel" aria-labelledby="list-<?= strtolower(str_replace(' ', '_', $value['name'])) ?>-list">
                     <div class="row mt-3">
+                        <!-- Menampilkan produk berdasarkan tenant/kategori menu -->
                         <?php foreach ($produkmenu as $product) {
                             $price = number_format($product['price'], 2, ',', '.');
                         ?>

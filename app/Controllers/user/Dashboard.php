@@ -12,13 +12,15 @@ class Dashboard extends BaseController
 {
     public function __construct()
     {
+        // Mengambil data dari model
         $this->ModelProduk = new ModelProduk();
         $this->ModelKategori = new ModelKategori();
         $this->ModelKeranjang = new ModelKeranjang();
     }
     
     public function index()
-    {
+    {   
+        // Menampilkan tampilan dashboard
         $data = [
             'page' => 'user/Dashboard/v_dashboard',
             'produkhome' => $this->ModelProduk->GetData(),

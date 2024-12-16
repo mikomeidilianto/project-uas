@@ -27,6 +27,7 @@ class ModelOrder extends Model
 }
 public function getKeranjang()
 {
+    // Mengambil data dari tabel keranjang, dan melakukan join ke table products berdasarkan id_product dengan menggunakan methode left
     return $this->db->table('keranjang')
         ->join('products', 'products.id = keranjang.id_product', 'left')
         ->select('keranjang.quantity, products.name AS product_name, products.price, products.foto')
@@ -96,6 +97,7 @@ public function getKeranjang()
 
     public function getOrderDetail($id_order)
 {
+    // Mengambil data order detail pada table orders, dan melakukan join ke 3 table yaitu user, keranjang dan products.
     return $this->db->table('orders')
         ->join('users', 'users.id = orders.user_id', 'left')
         ->join('keranjang', 'keranjang.id = orders.id_keranjang', 'left')
@@ -111,6 +113,7 @@ public function getKeranjang()
 
 public function getInvoice($id_order)
 {
+    // Mengambil data pada table invoice dan melakukan join
     return $this->db->table('invoice')
         ->join('products', 'products.id = invoice.product_id', 'left')
         ->select('products.name AS product_name, products.price, invoice.quantity')
@@ -121,6 +124,7 @@ public function getInvoice($id_order)
 
 public function getInvoiceDetail($id_order)
 {
+    // Mengambil data detail pada table invoice dan melakukan join
     return $this->db->table('invoices')
         ->join('orders', 'orders.id_order = invoices.order_id')
         ->join('products', 'products.id = invoices.product_id')
@@ -132,6 +136,7 @@ public function getInvoiceDetail($id_order)
 
 public function getCompletedOrders()
 {
+    // Mengambil data order yang complete pada tabel orders dan melakukan join
     return $this->db->table('orders')
         ->join('users', 'users.id = orders.user_id', 'left')
         ->select('orders.id_order, orders.status, users.nama AS user_nama, users.nim, users.telepon')

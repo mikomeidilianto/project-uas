@@ -12,6 +12,7 @@ class Menu extends BaseController
 {
     public function __construct()
     {
+        // Mengambil data dari model
         $this->ModelProduk = new ModelProduk();
         $this->ModelKategori = new ModelKategori();
         $this->ModelKeranjang = new ModelKeranjang();
@@ -19,6 +20,7 @@ class Menu extends BaseController
 
     public function index()
     {
+        // Menampilkan produk pada halaman menu
         $data = [
             'page' => 'user/Menu/v_menu',
             'kategorimenu' => $this->ModelKategori->AllData(),

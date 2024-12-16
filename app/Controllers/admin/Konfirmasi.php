@@ -10,7 +10,7 @@ use App\Models\ModelKategori;
 class Konfirmasi extends BaseController
 {
     protected $ModelOrder;
-
+    // Mengambil data dari model
     public function __construct()
     {
         $this->ModelOrder = new ModelOrder();
@@ -18,6 +18,7 @@ class Konfirmasi extends BaseController
 
     public function index()
     {
+        // Menampilkan Data
         $data = [
             'judul' => 'Konfirmasi Pesanan',
             'page' => 'admin/v_konfirmasi',
@@ -29,18 +30,21 @@ class Konfirmasi extends BaseController
 
     public function confirmOrder($id_order)
     {
+        // Fitur konfirmasi order, mengambil data dari model
         $this->ModelOrder->confirmOrder($id_order);
         return redirect()->to('admin/Konfirmasi')->with('success', 'Pesanan berhasil dikonfirmasi.');
     }
 
     public function cancelOrder($id_order)
     {
+                // Fitur cancle order, mengambil data dari model
         $this->ModelOrder->cancelOrder($id_order);
         return redirect()->to('admin/Konfirmasi')->with('danger', 'Pesanan berhasil ditolak.');
     }
 
     public function orders()
     {
+        // Menampilkan order
         $data = [
             'judul' => 'Orders',
             'page' => 'admin/v_orders',

@@ -10,6 +10,7 @@ class Kategori extends BaseController
 {
     public function __construct()
     {
+        // Mengambil data dari model ini
         $this->ModelKategori = new ModelKategori();
     }
     
@@ -36,6 +37,7 @@ class Kategori extends BaseController
          return view('admin/v_template', $data);
     }
 
+        //CRUD : CREATE
     public function InsertData()
     {
         if ($this->validate([
@@ -86,6 +88,7 @@ class Kategori extends BaseController
         }
     }
 
+        //CRUD : Update
     public function Edit($id)
     {
         $data = [
@@ -97,6 +100,7 @@ class Kategori extends BaseController
          return view('admin/v_template', $data);
     }
 
+    //CRUD : Update
     public function UpdateData($id)
     {
         if ($this->validate([
@@ -150,7 +154,7 @@ class Kategori extends BaseController
             return redirect()->to(base_url('admin/Kategori/Edit/' . $id))->withInput('validation', \config\Services::validation());
         }
     }
-
+    //CRUD : Delete
     public function Delete($id)
     {
         $detailkategori = $this->ModelKategori->DetailData($id);

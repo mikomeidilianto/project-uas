@@ -19,6 +19,10 @@ class Order extends BaseController
 
     public function index()
     {
+        if (session()->get('nama') == false)
+        {
+            return redirect()->to(base_url('admin/Auth/login'));
+        }
         // Menampilkan data pesanan yang sudah dikonfirmasi
         $data = [
             'judul' => 'Order',

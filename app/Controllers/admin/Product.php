@@ -17,6 +17,10 @@ class Product extends BaseController
 
     public function index()
     {
+        if (session()->get('nama') == false)
+        {
+            return redirect()->to(base_url('admin/Auth/login'));
+        }
         // Menampilkan data produk
         $data = [
             'judul' => 'Produk',

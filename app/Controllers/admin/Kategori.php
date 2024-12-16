@@ -17,6 +17,10 @@ class Kategori extends BaseController
     //CRUD : READ
     public function index()
     {
+        if (session()->get('nama') == false)
+        {
+            return redirect()->to(base_url('admin/Auth/login'));
+        }
         $data = [
             'judul' => 'Tenant',
             'page' => 'admin/v_kategori',

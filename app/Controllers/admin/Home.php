@@ -17,6 +17,10 @@ class Home extends BaseController
     }
     public function index()
     {
+        if (session()->get('nama') == false)
+        {
+            return redirect()->to(base_url('admin/Auth/login'));
+        }
         // Menampilkan halaman utama
         $data = [
             'judul' => 'Dashboard',

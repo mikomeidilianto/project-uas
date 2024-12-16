@@ -17,6 +17,11 @@ class Auth extends BaseController
 
     public function login()
     {
+        if (session()->get('nama') == true)
+        {
+            return redirect()->to(base_url('admin/Home')); 
+        }
+
         $data = [
             'judul' => 'Login',
         ];

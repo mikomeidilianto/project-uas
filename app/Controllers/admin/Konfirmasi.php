@@ -18,6 +18,10 @@ class Konfirmasi extends BaseController
 
     public function index()
     {
+        if (session()->get('nama') == false)
+        {
+            return redirect()->to(base_url('admin/Auth/login'));
+        }
         // Menampilkan Data
         $data = [
             'judul' => 'Konfirmasi Pesanan',
